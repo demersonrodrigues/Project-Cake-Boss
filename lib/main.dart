@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutterapp/cakebossapp/generatedtelainicialwidget/GeneratedTelainicialWidget.dart';
+import 'package:flutterapp/telasApp/Telainicial.dart';
 
 void main() {
   runApp(CakeBossApp());

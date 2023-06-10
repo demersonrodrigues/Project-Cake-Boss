@@ -1,4 +1,4 @@
-#Sat Jun 03 16:24:18 BRT 2023
-base.0=C\:\\Users\\vitor\\OneDrive\\Documentos\\appCakeBoss\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
+#Sat Jun 10 13:07:27 BRT 2023
+base.0=C\:\\Users\\vitor\\OneDrive\\Documentos\\GitHub\\Project-Cake-Boss\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
 path.0=classes.dex
 renamed.0=classes.dex
