@@ -108,7 +108,10 @@ class TelainicialWidget extends StatelessWidget {
             padding: EdgeInsets.all(3),
             child: ElevatedButton(
               onPressed: () {
-                // chama a tela de add produto ao estoque
+                Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => TelaCadastrarProduto()),
+                );
               },
               style: ElevatedButton.styleFrom(
                 padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
