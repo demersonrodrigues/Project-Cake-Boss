@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutterapp/cakebossapp/generatedtelainicialwidget/generated/CabecalhoWidget.dart';
+import 'package:flutterapp/telasApp/TelaAdicionarPV.dart';
 import 'package:flutterapp/telasApp/TelaCadastrarProduto.dart';
 import 'package:flutterapp/telasApp/TelaEstoqueProduto.dart';
 
@@ -36,6 +37,9 @@ class TelainicialWidget extends StatelessWidget {
                         height: 140,
                         child: ElevatedButton(
                           onPressed: () {
+                            Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => TelaAdicionarPV()));
                             // Chama a tela de gerar venda
                           },
                           style: ElevatedButton.styleFrom(
