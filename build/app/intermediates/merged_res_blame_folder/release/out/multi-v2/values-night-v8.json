@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.projeto_teste.app-mergeReleaseResources-9:/values-night-v8/values-night-v8.xml",
+            "outputFile": "com.example.projeto_teste.app-mergeReleaseResources-13:/values-night-v8/values-night-v8.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\vitor\\OneDrive\\Documentos\\appCakeBoss\\android\\app\\src\\main\\res\\values-night\\styles.xml",
+                    "source": "C:\\Users\\vitor\\OneDrive\\Documentos\\GitHub\\Project-Cake-Boss\\android\\app\\src\\main\\res\\values-night\\styles.xml",
                     "from": {
                         "startLines": "3,14",
                         "startColumns": "4,4",

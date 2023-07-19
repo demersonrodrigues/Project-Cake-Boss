@@ -1,27 +1,76 @@
-/*import 'package:flutterapp/classesObjeto/ProdutoClasse.dart';
+import 'dart:ffi';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutterapp/classesObjeto/ProdutoClasse.dart';
 
 class ProdutoDAO {
-  // função de acessar o BD
+  final CollectionReference produtosCollection =
+      FirebaseFirestore.instance.collection('Teste01');
 
-  Future cadastrarProdutoBD(Produto produto){
-    // função cadastrar produto
+  Future<void> cadastrarProduto(Produto produto) async {
+    try {
+      await produtosCollection.add({
+        'nome': produto.nome,
+        'descricao': produto.descricao,
+        'peso': produto.peso,
+        'valor': produto.valor,
+        'quantidadeEstoque': produto.quantidadeEstoque,
+
+      });
+      print('Produto cadastrado com sucesso!');
+    } catch (erro) {
+      print('Erro ao cadastrar o produto: $erro');
+    }
   }
 
-  Future listarProdutos(){
-    // função de listar os produtos
+  Future<List<Produto>> listarProdutosDoFirestore() async {
+  List<Produto> produtos = [];
+
+  try {
+    QuerySnapshot snapshot = await FirebaseFirestore.instance.collection('Teste01').get();
+
+    List<QueryDocumentSnapshot<Map<String, dynamic>>> documentos = snapshot.docs.map((doc) => doc as QueryDocumentSnapshot<Map<String, dynamic>>).toList();
+
+    for (var documento in documentos) {
+      Map<String, dynamic> dados = documento.data();
+
+      String nome = dados['nome'];
+      double valor = (dados['valor'] as num).toDouble();
+      double peso = (dados['peso'] as num).toDouble();
+      int quantidadeEstoque = dados['quantidadeEstoque'];
+      String descricao = dados['descricao'];
+
+      Produto produto = Produto(
+        nome: nome,
+        valor: valor,
+        peso: peso,
+        quantidadeEstoque: quantidadeEstoque,
+        descricao: descricao,
+      );
+
+      produtos.add(produto);
+    }
+
+    for (var produto in produtos) {
+      print('Nome: ${produto.nome}');
+      print('Valor: ${produto.valor}');
+      print('Peso: ${produto.peso}');
+      print('Quantidade em Estoque: ${produto.quantidadeEstoque}');
+      print('Descrição: ${produto.descricao}');
+      print('------------------------');
+    }
+  } catch (error) {
+    print('Erro ao recuperar produtos do Firestore: $error');
   }
 
-  Future pesquisarProduto(){
-    // função de pesquisar produtos
-  }
-
-  Future editarProduto(){
-    // função de editar produtos
-  }
-
-  Future deletarProduto(){
-
-  }
-
+  return produtos;
 }
-*/
+}
+
+//   Future editarProduto(){
+//     // função de editar produtos
+//   }
+
+//   Future deletarProduto(){
+
+//   }
+// }

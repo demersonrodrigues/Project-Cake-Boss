@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutterapp/cakebossapp/generatedtelainicialwidget/generated/CabecalhoWidget.dart';
+import 'package:flutterapp/classesDAO/ProdutoDAO.dart';
 import 'package:flutterapp/classesObjeto/ProdutoClasse.dart';
-import 'package:flutterapp/telasApp/Telainicial.dart';
+import 'package:flutterapp/telasApp/TelaInicial.dart';
 
 class TelaCadastrarProduto extends StatefulWidget {
   @override
@@ -136,7 +137,7 @@ class _CadastrarProdutoState extends State<TelaCadastrarProduto> {
                   onChanged: (novaCategoria) {
                     setState(() {
                       categoriaSelecionada = novaCategoria!;
-              }
+                },
               );
                 },
                 decoration: InputDecoration(
@@ -182,17 +183,21 @@ class _CadastrarProdutoState extends State<TelaCadastrarProduto> {
                   descricao: descricaoProduto
                 );
                 
-                /* chama a função de cadastrar produto
-                cadastrarProduto(Produto produto)
-                */
+                ProdutoDAO().cadastrarProduto(produto);
 
+              //printar informações no console
               print('Nome: ' + produto.nome);
               print('Preço: R\$${produto.valor}');
               print('Quantidade: ${produto.quantidadeEstoque}');
               print('Descrição: ' + produto.descricao);
+
               },
               style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.orange,
+                backgroundColor: const Color.fromRGBO(252, 255, 114, 1),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(15.0)
+                            ),
+                            elevation: 10,
                 minimumSize: Size(200, 50)
               ),
               child: Text('Cadastrar',
