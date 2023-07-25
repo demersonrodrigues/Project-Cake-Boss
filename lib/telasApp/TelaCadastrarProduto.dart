@@ -209,7 +209,7 @@ class _CadastrarProdutoState extends State<TelaCadastrarProduto> {
               child: ElevatedButton(onPressed: () {
                 Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => TelainicialWidget()),
+                MaterialPageRoute(builder: (context) => TelaInicialWidget()),
                 );
               },
               style: ElevatedButton.styleFrom(

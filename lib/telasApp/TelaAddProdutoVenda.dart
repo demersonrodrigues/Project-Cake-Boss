@@ -3,7 +3,7 @@ import 'package:flutterapp/cakebossapp/generatedtelainicialwidget/generated/Cabe
 
 
 
-class TelaAdicionarPV extends StatelessWidget {
+class TelaAddProdutoVenda extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
