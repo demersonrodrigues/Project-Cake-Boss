@@ -110,8 +110,7 @@ class _CadastrarProdutoState extends State<TelaCadastrarProduto> {
               ),
               ),
               SizedBox(height: 80.0),
-              ],
-              
+              ],             
             ),
             Row(
               children: [
@@ -185,12 +184,28 @@ class _CadastrarProdutoState extends State<TelaCadastrarProduto> {
                 
                 ProdutoDAO().cadastrarProduto(produto);
 
+                showDialog(context: context, builder: (BuildContext context){
+                  return AlertDialog(
+                    title: Text('Produto Cadastrado com sucesso'),
+                    actions: [
+                      TextButton(
+                        child: Text('ok'),
+                          onPressed: () {
+                            Navigator.pop(context);
+                            Navigator.pop(context);
+                          },
+                        ),
+                      ],
+                    );
+                  }
+                );
+                
+
               //printar informações no console
               print('Nome: ' + produto.nome);
               print('Preço: R\$${produto.valor}');
               print('Quantidade: ${produto.quantidadeEstoque}');
               print('Descrição: ' + produto.descricao);
-
               },
               style: ElevatedButton.styleFrom(
                 backgroundColor: const Color.fromRGBO(252, 255, 114, 1),

@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutterapp/cakebossapp/generatedtelainicialwidget/generated/CabecalhoWidget.dart';
 import 'package:flutterapp/telasApp/TelaAdicionarPV.dart';
+import 'package:flutterapp/telasApp/TelaAdicionarProdutoEstoque.dart';
 import 'package:flutterapp/telasApp/TelaCadastrarProduto.dart';
 import 'package:flutterapp/telasApp/TelaEstoqueProduto.dart';
+import 'package:flutterapp/telasApp/TelaGerenciarVendas.dart';
 
 
 class TelainicialWidget extends StatelessWidget {
@@ -40,7 +42,6 @@ class TelainicialWidget extends StatelessWidget {
                             Navigator.push(
                             context,
                             MaterialPageRoute(builder: (context) => TelaAdicionarPV()));
-                            // Chama a tela de gerar venda
                           },
                           style: ElevatedButton.styleFrom(
                             padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
@@ -116,7 +117,10 @@ class TelainicialWidget extends StatelessWidget {
                         height: 140,
                         child: ElevatedButton(
                           onPressed: () {
-                            // chama a tela de gerenciar vendas
+                            Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => TelaGerenciarVendaWidget()),
+                          );
                           },
                           
                           style: ElevatedButton.styleFrom(
@@ -242,7 +246,10 @@ class TelainicialWidget extends StatelessWidget {
                         height: 140,
                         child: ElevatedButton(
                           onPressed: () {
-                            // chama a tela de add produto ao estoque
+                            Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => TelaAdicionarProdutoEstoqueWidget()),
+                          );
                           },
                           style: ElevatedButton.styleFrom(
                             padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),

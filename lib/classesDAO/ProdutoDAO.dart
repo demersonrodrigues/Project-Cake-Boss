@@ -22,7 +22,7 @@ class ProdutoDAO {
     }
   }
 
-  Future<List<Produto>> listarProdutosDoFirestore() async {
+  Future<List<Produto>> listarProdutos() async {
   List<Produto> produtos = [];
 
   try {
@@ -64,13 +64,35 @@ class ProdutoDAO {
 
   return produtos;
 }
+
+  Future<void> deletarProduto(String nomeProduto) async {
+    QuerySnapshot querySnapshot = await FirebaseFirestore.instance
+        .collection('Teste01')
+        .where('nome', isEqualTo: nomeProduto)
+        .get();
+
+    for (DocumentSnapshot doc in querySnapshot.docs) {
+      await doc.reference.delete();
+    }
+  }
+
+  Future<void> adicionarAoEstoque(String nomeProduto, int quantidadeAdicionar) async {
+    try {
+      QuerySnapshot querySnapshot = await FirebaseFirestore.instance
+          .collection('Teste01')
+          .where('nome', isEqualTo: nomeProduto)
+          .get();
+
+      for (DocumentSnapshot doc in querySnapshot.docs) {
+        int quantidadeEstoqueAtual = doc['quantidadeEstoque'];
+        int novaQuantidadeEstoque = quantidadeEstoqueAtual + quantidadeAdicionar;
+
+        await doc.reference.update({'quantidadeEstoque': novaQuantidadeEstoque});
+        print('Estoque atualizado com sucesso! Nova quantidade: $novaQuantidadeEstoque');
+      }
+    } catch (error) {
+      print('Erro ao adicionar ao estoque: $error');
+    }
+  }
+  
 }
-
-//   Future editarProduto(){
-//     // função de editar produtos
-//   }
-
-//   Future deletarProduto(){
-
-//   }
-// }
