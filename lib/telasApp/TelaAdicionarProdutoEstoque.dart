@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutterapp/cakebossapp/generatedtelainicialwidget/generated/CabecalhoWidget.dart';
-import 'package:flutterapp/telasApp/TelaAdicionarPV.dart';
-import 'package:flutterapp/telasApp/TelaCadastrarProduto.dart';
-import 'package:flutterapp/telasApp/TelaEstoqueProduto.dart';
+// import 'package:flutterapp/telasApp/TelaAddProdutoVenda.dart';
+// import 'package:flutterapp/telasApp/TelaCadastrarProduto.dart';
+// import 'package:flutterapp/telasApp/TelaEstoqueProduto.dart';
 
 import '../classesDAO/ProdutoDAO.dart';
 import '../classesObjeto/ProdutoClasse.dart';

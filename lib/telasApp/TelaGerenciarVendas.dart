@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutterapp/cakebossapp/generatedtelainicialwidget/generated/CabecalhoWidget.dart';
-import 'package:flutterapp/telasApp/TelaAdicionarPV.dart';
-import 'package:flutterapp/telasApp/TelaCadastrarProduto.dart';
-import 'package:flutterapp/telasApp/TelaEstoqueProduto.dart';
+// import 'package:flutterapp/telasApp/TelaAddProdutoVenda.dart';
+// import 'package:flutterapp/telasApp/TelaCadastrarProduto.dart';
+// import 'package:flutterapp/telasApp/TelaEstoqueProduto.dart';
 
 
 class TelaGerenciarVendaWidget extends StatelessWidget {
