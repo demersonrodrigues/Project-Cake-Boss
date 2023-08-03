@@ -88,11 +88,10 @@ class ProdutoDAO {
         int novaQuantidadeEstoque = quantidadeEstoqueAtual + quantidadeAdicionar;
 
         await doc.reference.update({'quantidadeEstoque': novaQuantidadeEstoque});
-        print('Estoque atualizado com sucesso! Nova quantidade: $novaQuantidadeEstoque');
+        print('Novo estoque: $novaQuantidadeEstoque');
       }
     } catch (error) {
       print('Erro ao adicionar ao estoque: $error');
     }
   }
-  
 }

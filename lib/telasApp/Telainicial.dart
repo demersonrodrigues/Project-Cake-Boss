@@ -245,7 +245,7 @@ class TelaInicialWidget extends StatelessWidget {
                           onPressed: () {
                             Navigator.push(
                               context,
-                              MaterialPageRoute(builder: (context) => TelaAddProdutoEstoque()),
+                              MaterialPageRoute(builder: (context) => TelaAddProdutoEstoqueWidget()),
                               );
                           },
                           style: ElevatedButton.styleFrom(
