@@ -5,7 +5,7 @@ library {
   maven_library {
     groupId: "com.google.firebase"
     artifactId: "firebase-bom"
-    version: "32.1.1"
+    version: "32.2.0"
   }
   repo_index {
   }
@@ -681,10 +681,10 @@ library {
   maven_library {
     groupId: "com.google.firebase"
     artifactId: "firebase-firestore"
-    version: "24.6.1"
+    version: "24.7.0"
   }
   digests {
-    sha256: "\243\371w\255\374\206\005R\365j\267D\370\274\204\032\307\217u\377\006/\000\317\377\204\017\313\024\366\303}"
+    sha256: "\t\313\273y\327\356\243&\331\2234\360\0232.\235\341\275\322\004\225\244(\200\235\306\214\346g\326\247\270"
   }
   repo_index {
   }
@@ -1085,7 +1085,7 @@ library {
 }
 library {
   digests {
-    sha256: "8\333(&\343E\332\332TcOa\024\a+R\345\257\031n\325\206\257\3234\335\fu\260\202\270\340"
+    sha256: "w\372{\326@\024\330\v\254\232D\271\031_\242\264\206\022\033\347Mn\033b<\261\352}\020\001my"
   }
 }
 library_dependencies {

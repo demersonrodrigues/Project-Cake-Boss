@@ -7401,8 +7401,10 @@ com.google.firebase.firestore.FirebaseFirestore:
     private static final java.lang.String TAG
     public com.google.firebase.firestore.ListenerRegistration addSnapshotsInSyncListener(android.app.Activity,java.lang.Runnable)
     com.google.firebase.firestore.util.AsyncQueue getAsyncQueue()
+    private static com.google.firebase.FirebaseApp getDefaultFirebaseApp()
     public com.google.firebase.firestore.FirebaseFirestoreSettings getFirestoreSettings()
     public static com.google.firebase.firestore.FirebaseFirestore getInstance()
+    public static com.google.firebase.firestore.FirebaseFirestore getInstance(java.lang.String)
     public com.google.firebase.firestore.LoadBundleTask loadBundle(java.nio.ByteBuffer)
     public com.google.android.gms.tasks.Task runBatch(com.google.firebase.firestore.WriteBatch$Function)
     public com.google.android.gms.tasks.Task runTransaction(com.google.firebase.firestore.Transaction$Function)

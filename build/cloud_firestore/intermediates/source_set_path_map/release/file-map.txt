@@ -3,10 +3,10 @@ io.flutter.plugins.firebase.firestore.cloud_firestore-jetified-window-1.0.0-beta
 io.flutter.plugins.firebase.firestore.cloud_firestore-jetified-play-services-basement-18.1.0-2 C:\Users\vitor\.gradle\caches\transforms-3\4ef8e7d9a60cff636871604cf50e4184\transformed\jetified-play-services-basement-18.1.0\res
 io.flutter.plugins.firebase.firestore.cloud_firestore-core-1.6.0-3 C:\Users\vitor\.gradle\caches\transforms-3\6d3237bc319e7b967918f32c402a8d45\transformed\core-1.6.0\res
 io.flutter.plugins.firebase.firestore.cloud_firestore-jetified-play-services-base-18.0.1-4 C:\Users\vitor\.gradle\caches\transforms-3\7978d9ef3b332cd80992fa56b50f7f56\transformed\jetified-play-services-base-18.0.1\res
-io.flutter.plugins.firebase.firestore.cloud_firestore-jetified-firebase-common-20.3.2-5 C:\Users\vitor\.gradle\caches\transforms-3\cce9b3130a75539294b1647affdcc0ee\transformed\jetified-firebase-common-20.3.2\res
+io.flutter.plugins.firebase.firestore.cloud_firestore-jetified-firebase-common-20.3.3-5 C:\Users\vitor\.gradle\caches\transforms-3\cdee480617d8040e445d3cb851e491ba\transformed\jetified-firebase-common-20.3.3\res
 io.flutter.plugins.firebase.firestore.cloud_firestore-jetified-annotation-experimental-1.1.0-6 C:\Users\vitor\.gradle\caches\transforms-3\f0ced427c4d770421a04aafb9ab9aa25\transformed\jetified-annotation-experimental-1.1.0\res
-io.flutter.plugins.firebase.firestore.cloud_firestore-main-7 C:\Users\vitor\AppData\Local\Pub\Cache\hosted\pub.dev\cloud_firestore-4.8.2\android\src\main\res
-io.flutter.plugins.firebase.firestore.cloud_firestore-release-8 C:\Users\vitor\AppData\Local\Pub\Cache\hosted\pub.dev\cloud_firestore-4.8.2\android\src\release\res
+io.flutter.plugins.firebase.firestore.cloud_firestore-main-7 C:\Users\vitor\AppData\Local\Pub\Cache\hosted\pub.dev\cloud_firestore-4.8.3\android\src\main\res
+io.flutter.plugins.firebase.firestore.cloud_firestore-release-8 C:\Users\vitor\AppData\Local\Pub\Cache\hosted\pub.dev\cloud_firestore-4.8.3\android\src\release\res
 io.flutter.plugins.firebase.firestore.cloud_firestore-pngs-9 C:\Users\vitor\OneDrive\Documentos\GitHub\Project-Cake-Boss\build\cloud_firestore\generated\res\pngs\release
 io.flutter.plugins.firebase.firestore.cloud_firestore-resValues-10 C:\Users\vitor\OneDrive\Documentos\GitHub\Project-Cake-Boss\build\cloud_firestore\generated\res\resValues\release
 io.flutter.plugins.firebase.firestore.cloud_firestore-rs-11 C:\Users\vitor\OneDrive\Documentos\GitHub\Project-Cake-Boss\build\cloud_firestore\generated\res\rs\release

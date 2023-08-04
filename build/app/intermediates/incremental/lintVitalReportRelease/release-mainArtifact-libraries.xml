@@ -625,10 +625,10 @@
       externalAnnotations="annotations.zip"
       proguardRules="proguard.txt"/>
   <library
-      name="com.google.firebase:firebase-firestore:24.6.1@aar"
-      jars="C:\Users\vitor\.gradle\caches\transforms-3\34f163665f0bfa5a64b16eea77c1027c\transformed\jetified-firebase-firestore-24.6.1\jars\classes.jar"
-      resolved="com.google.firebase:firebase-firestore:24.6.1"
-      folder="C:\Users\vitor\.gradle\caches\transforms-3\34f163665f0bfa5a64b16eea77c1027c\transformed\jetified-firebase-firestore-24.6.1"
+      name="com.google.firebase:firebase-firestore:24.7.0@aar"
+      jars="C:\Users\vitor\.gradle\caches\transforms-3\7bccba9beb0ed444671f3f964d73aa50\transformed\jetified-firebase-firestore-24.7.0\jars\classes.jar"
+      resolved="com.google.firebase:firebase-firestore:24.7.0"
+      folder="C:\Users\vitor\.gradle\caches\transforms-3\7bccba9beb0ed444671f3f964d73aa50\transformed\jetified-firebase-firestore-24.7.0"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"

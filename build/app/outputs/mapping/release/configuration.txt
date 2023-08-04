@@ -227,7 +227,7 @@
 # An annotation used for build tooling, won't be directly accessed.
 -dontwarn org.codehaus.mojo.animal_sniffer.IgnoreJRERequirement
 # End of content from C:\Users\vitor\.gradle\caches\transforms-3\2044d724bce11ac36e3e4e7ec551ffde\transformed\rules\lib\META-INF\com.android.tools\r8\coroutines.pro
-# The proguard configuration file for the following section is C:\Users\vitor\.gradle\caches\transforms-3\34f163665f0bfa5a64b16eea77c1027c\transformed\jetified-firebase-firestore-24.6.1\proguard.txt
+# The proguard configuration file for the following section is C:\Users\vitor\.gradle\caches\transforms-3\7bccba9beb0ed444671f3f964d73aa50\transformed\jetified-firebase-firestore-24.7.0\proguard.txt
 # Needed for DNS resolution.  Present in OpenJDK, but not Android
 -dontwarn javax.naming.**
 
@@ -247,7 +247,7 @@
 -dontwarn okio.**
 -dontwarn com.google.j2objc.annotations.**
 
-# End of content from C:\Users\vitor\.gradle\caches\transforms-3\34f163665f0bfa5a64b16eea77c1027c\transformed\jetified-firebase-firestore-24.6.1\proguard.txt
+# End of content from C:\Users\vitor\.gradle\caches\transforms-3\7bccba9beb0ed444671f3f964d73aa50\transformed\jetified-firebase-firestore-24.7.0\proguard.txt
 # The proguard configuration file for the following section is C:\Users\vitor\.gradle\caches\transforms-3\9e731b399e2ba3f697ad3e602a121507\transformed\jetified-play-services-measurement-api-21.3.0\proguard.txt
 # Can be removed once we pull in a dependency on firebase-common that includes
 # https://github.com/firebase/firebase-android-sdk/pull/1472/commits/856f1ca1151cdd88679bbc778892f23dfa34fc06#diff-a2ed34b5a38b4c6c686b09e54865eb48
