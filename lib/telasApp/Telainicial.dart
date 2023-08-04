@@ -3,6 +3,7 @@ import 'package:flutterapp/cakebossapp/generatedtelainicialwidget/generated/Cabe
 import 'package:flutterapp/telasApp/TelaAddProdutoVenda.dart';
 import 'package:flutterapp/telasApp/TelaCadastrarProduto.dart';
 import 'package:flutterapp/telasApp/TelaAddProdutoEstoque.dart';
+import 'package:flutterapp/telasApp/TelaEstatistica.dart';
 import 'package:flutterapp/telasApp/TelaEstoqueProduto.dart';
 
 
@@ -285,7 +286,10 @@ class TelaInicialWidget extends StatelessWidget {
                         height: 140,
                         child: ElevatedButton(
                           onPressed: () {
-                            // chama a tela de estatistica
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => TelaEstatistica()),
+                              );
                           },
                           style: ElevatedButton.styleFrom(
                             padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),

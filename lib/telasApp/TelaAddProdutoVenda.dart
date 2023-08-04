@@ -101,7 +101,8 @@ class _TelaAddProdutoVendaState extends State<TelaAddProdutoVenda> {
             },
           ),
         ]),
-      )),
+      )
+      ),
       bottomNavigationBar: BottomAppBar(
         child: Container(
           height: 60,

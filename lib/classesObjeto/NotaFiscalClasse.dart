@@ -13,8 +13,9 @@ class NotaFiscal{
   });
 
   void imprimirNotaFiscal(){
-    print('Nota fiscal Nº $idNotaFiscal');
-    print(pedido.dataPedido);
-    print(pedido.valorTotal);
+
+
+    print('=-=-=-=-=-= CAKE BOSS LTDA. =-=-=-=-=-=');
+    print('${pedido.dataPedido} ${pedido.horarioPedido}');
   }
 }

@@ -208,7 +208,7 @@ class _CadastrarProdutoState extends State<TelaCadastrarProduto> {
               print('Descrição: ' + produto.descricao);
               },
               style: ElevatedButton.styleFrom(
-                backgroundColor: const Color.fromRGBO(252, 255, 114, 1),
+                backgroundColor: Colors.orange,
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(15.0)
                             ),
@@ -228,11 +228,11 @@ class _CadastrarProdutoState extends State<TelaCadastrarProduto> {
                 );
               },
               style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.white,
+                backgroundColor: const Color.fromARGB(255, 237, 237, 237),
                 minimumSize: Size(200, 50),
                   ),
               child: Text('Cancelar',
-                style: TextStyle(fontSize: 20, color: Colors.red),
+                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.red),
               ),
                   ),
                 ),

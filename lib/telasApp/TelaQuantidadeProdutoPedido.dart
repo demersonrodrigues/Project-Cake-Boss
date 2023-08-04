@@ -1,7 +1,11 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutterapp/cakebossapp/generatedtelainicialwidget/generated/CabecalhoWidget.dart';
+import 'package:flutterapp/classesDAO/ItemPedidoDAO.dart';
+import 'package:flutterapp/classesDAO/PedidoDAO.dart';
 import 'package:flutterapp/classesObjeto/ItemPedidoClasse.dart';
 import 'package:flutterapp/classesObjeto/PedidoClasse.dart';
+import 'package:flutterapp/telasApp/TelaNotaFiscal.dart';
 // import '../classesDAO/ProdutoDAO.dart';
 import '../classesObjeto/ProdutoClasse.dart';
 
@@ -18,6 +22,7 @@ class TelaQuantidadeProdutosPedido extends StatefulWidget {
 class _TelaQuantidadeProdutosPedidoState
     extends State<TelaQuantidadeProdutosPedido> {
   late List<int> quantidades;
+  late String idPedido;
   late List<int> valores = [];
   late String valorItemFormatado = '';
 
@@ -124,7 +129,7 @@ class _TelaQuantidadeProdutosPedidoState
                   ),
                   SizedBox(height: 20),
                   ElevatedButton(
-                    onPressed: () {
+                    onPressed: () async {
                       double valorTotal = calcularValorTotal().toDouble();
 
                       DateTime atual = DateTime.now();
@@ -133,11 +138,17 @@ class _TelaQuantidadeProdutosPedidoState
 
                       Pedido venda = Pedido(dataPedido:  dataAtual, horarioPedido: horarioAtual, valorTotal: valorTotal);
 
+                      DocumentReference<Object?>? pedidoID = await PedidoDAO().cadastrarPedido(venda);
+
+                      if (pedidoID != null){
+                        idPedido = pedidoID.id;
+                      }
                       List<ItemPedido> itensPedidos = [];
-                      
+
                       int index = 0;
                       for (Produto produto in widget.produtosSelecionados){
-                        ItemPedido itens = ItemPedido(pedido: venda, produto: widget.produtosSelecionados[index], quantidade: quantidades[index]);
+                        ItemPedido itens = ItemPedido(idPedido: idPedido, pedido: venda, produto: widget.produtosSelecionados[index], quantidade: quantidades[index]);
+                        ItemPedidoDAO().cadastrarItens(itens);
                         index++;
                         itensPedidos.add(itens);
                       }
@@ -151,6 +162,11 @@ class _TelaQuantidadeProdutosPedidoState
                         print("Horario: ${item.pedido.horarioPedido}");
                         print("-------------");
                       }
+                      
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => TelaNotaFiscal(pedido: venda, idPedido: idPedido)),
+                      );
                   },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.orange,
