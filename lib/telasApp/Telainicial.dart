@@ -46,7 +46,7 @@ class TelaInicialWidget extends StatelessWidget {
                           },
                           style: ElevatedButton.styleFrom(
                             padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
-                            backgroundColor: const Color.fromRGBO(252, 255, 114, 1),
+                            backgroundColor: const Color.fromARGB(255, 254, 165, 0),
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(15.0)
                             ),
@@ -84,7 +84,7 @@ class TelaInicialWidget extends StatelessWidget {
                           },
                           style: ElevatedButton.styleFrom(
                             padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
-                            backgroundColor: const Color.fromRGBO(252, 255, 114, 1),
+                            backgroundColor: const Color.fromARGB(255, 254, 165, 0),
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(15.0)
                             ),
@@ -123,7 +123,7 @@ class TelaInicialWidget extends StatelessWidget {
                           
                           style: ElevatedButton.styleFrom(
                             padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
-                            backgroundColor: const Color.fromRGBO(252, 255, 114, 1),
+                            backgroundColor: const Color.fromARGB(255, 254, 165, 0),
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(15.0)
                             ),
@@ -164,7 +164,7 @@ class TelaInicialWidget extends StatelessWidget {
                             },
                           style: ElevatedButton.styleFrom(
                             padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
-                            backgroundColor: const Color.fromRGBO(252, 255, 114, 1),
+                            backgroundColor: const Color.fromARGB(255, 254, 165, 0),
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(15.0)
                             ),
@@ -209,7 +209,7 @@ class TelaInicialWidget extends StatelessWidget {
                           },
                           style: ElevatedButton.styleFrom(
                             padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
-                            backgroundColor: const Color.fromRGBO(252, 255, 114, 1),
+                            backgroundColor: const Color.fromARGB(255, 254, 165, 0),
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(15.0)
                             ),
@@ -251,7 +251,7 @@ class TelaInicialWidget extends StatelessWidget {
                           },
                           style: ElevatedButton.styleFrom(
                             padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
-                            backgroundColor: const Color.fromRGBO(252, 255, 114, 1),
+                            backgroundColor: Color.fromARGB(255, 252, 177, 38),
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(15.0)
                             ),
@@ -293,7 +293,7 @@ class TelaInicialWidget extends StatelessWidget {
                           },
                           style: ElevatedButton.styleFrom(
                             padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
-                            backgroundColor: const Color.fromRGBO(252, 255, 114, 1),
+                            backgroundColor: const Color.fromARGB(255, 254, 165, 0),
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(15.0)
                             ),
@@ -332,7 +332,7 @@ class TelaInicialWidget extends StatelessWidget {
                           
                             style: ElevatedButton.styleFrom(
                             padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
-                            backgroundColor: const Color.fromRGBO(252, 255, 114, 1),
+                            backgroundColor: const Color.fromARGB(255, 254, 165, 0),
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(15.0)
                             ),

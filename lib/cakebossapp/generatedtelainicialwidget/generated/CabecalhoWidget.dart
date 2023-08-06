@@ -33,7 +33,7 @@ class CabecalhoWidget extends StatelessWidget implements PreferredSizeWidget {
       centerTitle: true,
       backgroundColor: const Color.fromARGB(255, 254, 165, 0),
       elevation: kIsWeb ? 0 : 5,
-      automaticallyImplyLeading: false, // Remover o botão de voltar
+      automaticallyImplyLeading: true, // Remover o botão de voltar
       toolbarHeight: 160.0, // Altura do AppBar
     );
   }
