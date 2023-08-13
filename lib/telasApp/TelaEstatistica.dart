@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutterapp/cakebossapp/generatedtelainicialwidget/generated/CabecalhoWidget.dart';
-import 'package:flutterapp/classesDAO/ProdutoDAO.dart';
-import 'package:flutterapp/classesObjeto/ProdutoClasse.dart';
-import 'package:flutterapp/telasApp/TelaInicial.dart';
+import 'package:flutterapp/classesDAO/PedidoDAO.dart';
+
 
 class TelaEstatistica extends StatefulWidget {
   @override
@@ -12,6 +10,22 @@ class TelaEstatistica extends StatefulWidget {
 
 class _EstatisticaState extends State<TelaEstatistica> {
   String? categoriaSelecionada;
+  double valorTotal = 0;
+
+  @override
+  void initState() {
+    super.initState();
+    _carregarValorTotal();
+  }
+
+  Future<void> _carregarValorTotal() async {
+    double total = await PedidoDAO.calcularValorTotal();
+
+    setState(() {
+      valorTotal = total;
+    });
+  }
+
   List<DropdownMenuItem<String>> categorias = [
     DropdownMenuItem(
       value: 'Hoje',
@@ -30,7 +44,7 @@ class _EstatisticaState extends State<TelaEstatistica> {
       child: Text('Período Total'),
     ),
   ];
-
+  @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
@@ -100,7 +114,7 @@ class _EstatisticaState extends State<TelaEstatistica> {
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 Text(
-                                  ' Itens Vendidos',
+                                  'Valor Total de Vendas: R\$ $valorTotal',
                                   style: TextStyle(
                                     fontSize: 15,
                                     fontWeight: FontWeight.w900,

@@ -1,20 +1,19 @@
+import 'dart:io';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutterapp/cakebossapp/generatedtelainicialwidget/generated/CabecalhoWidget.dart';
 import 'package:flutterapp/classesDAO/PedidoDAO.dart';
-import 'package:flutterapp/classesDAO/ProdutoDAO.dart';
-import 'package:flutterapp/classesObjeto/ClienteClasse.dart';
+import 'package:flutterapp/classesObjeto/ItemPedidoClasse.dart';
 import 'package:flutterapp/classesObjeto/NotaFiscalClasse.dart';
-import 'package:flutterapp/telasApp/TelaInicial.dart';
-import 'package:pdf/pdf.dart';
-import 'package:pdf/widgets.dart' as pw;
-
+import 'package:open_file/open_file.dart';
 import '../classesObjeto/PedidoClasse.dart';
+
 
 class TelaNotaFiscal extends StatefulWidget {
   late final Pedido pedido;
   late final String idPedido;
-  TelaNotaFiscal({required this.pedido, required this.idPedido});
+  
+  late final List<ItemPedido> itensPedidos;
+  TelaNotaFiscal({required this.pedido, required this.idPedido, required this.itensPedidos});
 
   @override
   _NotaFiscalState createState() => _NotaFiscalState();
@@ -56,6 +55,12 @@ class _NotaFiscalState extends State<TelaNotaFiscal> {
 
     metodoPagamentoController.dispose();
   }
+
+  void _downloadAndOpenPDF(BuildContext context) async {
+  File pdfFile = await NotaFiscal().gerarPDF(widget.itensPedidos);
+  OpenFile.open(pdfFile.path, type: "application/pdf");
+}
+
 
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -126,8 +131,9 @@ class _NotaFiscalState extends State<TelaNotaFiscal> {
                         widget.pedido.metodoPagamento = categoriaSelecionada;
 
                         PedidoDAO().nomeMetodoPagamento(widget.idPedido, widget.pedido);
+                        _downloadAndOpenPDF(context);
 
-                        
+
                       },
                       style: ElevatedButton.styleFrom(
                         padding:

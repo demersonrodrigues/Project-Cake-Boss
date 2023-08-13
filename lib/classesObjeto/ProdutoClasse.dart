@@ -1,8 +1,6 @@
-import 'package:flutterapp/classesObjeto/CategoriaClasse.dart';
-
 class Produto{
   int? idProduto;
-  Categoria? categoria;
+  String? categoria;
   String nome;
   double valor;
   double peso;

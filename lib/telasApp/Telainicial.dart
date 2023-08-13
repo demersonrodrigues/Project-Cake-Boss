@@ -5,6 +5,7 @@ import 'package:flutterapp/telasApp/TelaCadastrarProduto.dart';
 import 'package:flutterapp/telasApp/TelaAddProdutoEstoque.dart';
 import 'package:flutterapp/telasApp/TelaEstatistica.dart';
 import 'package:flutterapp/telasApp/TelaEstoqueProduto.dart';
+import 'TelaGerenciarVendas.dart';
 
 
 class TelaInicialWidget extends StatelessWidget {
@@ -15,8 +16,8 @@ class TelaInicialWidget extends StatelessWidget {
         appBar: PreferredSize(
           preferredSize: Size.fromHeight(140),
           child: LayoutBuilder(
-            builder: (BuildContext context, BoxConstraints constraints) {
-              final double appBarHeight = constraints.biggest.height;
+            builder: (BuildContext context, raints) {
+              final double appBarHeight = raints.biggest.height;
               return AppBar(
                 flexibleSpace: Container(
                   height: appBarHeight,
@@ -46,7 +47,7 @@ class TelaInicialWidget extends StatelessWidget {
                           },
                           style: ElevatedButton.styleFrom(
                             padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
-                            backgroundColor: const Color.fromARGB(255, 254, 165, 0),
+                            backgroundColor:  const Color.fromARGB(255, 254, 165, 0),
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(15.0)
                             ),
@@ -118,7 +119,10 @@ class TelaInicialWidget extends StatelessWidget {
                         height: 140,
                         child: ElevatedButton(
                           onPressed: () {
-                            // chama a tela de gerenciar vendas
+                            Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => TelaGerenciarVendas()),
+                          );
                           },
                           
                           style: ElevatedButton.styleFrom(
@@ -164,7 +168,7 @@ class TelaInicialWidget extends StatelessWidget {
                             },
                           style: ElevatedButton.styleFrom(
                             padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
-                            backgroundColor: const Color.fromARGB(255, 254, 165, 0),
+                            backgroundColor:  const Color.fromARGB(255, 254, 165, 0),
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(15.0)
                             ),
@@ -209,7 +213,7 @@ class TelaInicialWidget extends StatelessWidget {
                           },
                           style: ElevatedButton.styleFrom(
                             padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
-                            backgroundColor: const Color.fromARGB(255, 254, 165, 0),
+                            backgroundColor:  const Color.fromARGB(255, 254, 165, 0),
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(15.0)
                             ),
@@ -251,7 +255,7 @@ class TelaInicialWidget extends StatelessWidget {
                           },
                           style: ElevatedButton.styleFrom(
                             padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
-                            backgroundColor: Color.fromARGB(255, 252, 177, 38),
+                            backgroundColor: const Color.fromARGB(255, 254, 165, 0),
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(15.0)
                             ),
@@ -261,9 +265,9 @@ class TelaInicialWidget extends StatelessWidget {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Text(
-                              ' Adicionar\nProduto ao\n   Estoque',
+                              ' Gerenciar\n  Estoque',
                               style: 
-                              TextStyle(fontSize: 15,
+                              TextStyle(fontSize: 18,
                               fontWeight: FontWeight.w900,
                               fontFamily: 'montserrat',
                               color: Colors.black,
@@ -293,7 +297,7 @@ class TelaInicialWidget extends StatelessWidget {
                           },
                           style: ElevatedButton.styleFrom(
                             padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
-                            backgroundColor: const Color.fromARGB(255, 254, 165, 0),
+                            backgroundColor:  const Color.fromARGB(255, 254, 165, 0),
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(15.0)
                             ),
@@ -332,7 +336,7 @@ class TelaInicialWidget extends StatelessWidget {
                           
                             style: ElevatedButton.styleFrom(
                             padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
-                            backgroundColor: const Color.fromARGB(255, 254, 165, 0),
+                            backgroundColor:  const Color.fromARGB(255, 254, 165, 0),
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(15.0)
                             ),

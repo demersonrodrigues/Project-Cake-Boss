@@ -109,7 +109,28 @@ class _TelaAddProdutoVendaState extends State<TelaAddProdutoVenda> {
           child: Center(
             child: ElevatedButton(
               onPressed: () {
-                Navigator.push(
+                if(_produtosSelecionados.isEmpty){
+                  showDialog(
+                          context: context,
+                          builder: (BuildContext context) {
+                            return AlertDialog(
+                              title: Text('Erro'),
+                              content: Text(
+                                  'Adicione pelo menos 1 produto'),
+                              actions: <Widget>[
+                                TextButton(
+                                  onPressed: () {
+                                    Navigator.of(context)
+                                        .pop();
+                                  },
+                                  child: Text('OK'),
+                                ),
+                              ],
+                            );
+                          },
+                        );
+                } else {
+                  Navigator.push(
                   context,
                   MaterialPageRoute(
                     builder: (context) => TelaQuantidadeProdutosPedido(
@@ -117,6 +138,7 @@ class _TelaAddProdutoVendaState extends State<TelaAddProdutoVenda> {
                     ),
                   ),
                 );
+                }
               },
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.orange,

@@ -1,7 +1,6 @@
-import 'package:flutterapp/classesObjeto/ClienteClasse.dart';
-
 class Pedido{
   int? idPedido;
+  String? docRef;
   String? cliente;
   String? dataPedido;
   String? horarioPedido;
@@ -9,6 +8,7 @@ class Pedido{
   String? metodoPagamento;
 
   Pedido({
+    this.docRef,
     this.idPedido,
     this.cliente,
     this.dataPedido,

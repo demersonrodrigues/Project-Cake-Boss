@@ -1,16 +1,16 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutterapp/cakebossapp/generatedtelainicialwidget/generated/CabecalhoWidget.dart';
 import 'package:flutterapp/classesDAO/ItemPedidoDAO.dart';
 import 'package:flutterapp/classesDAO/PedidoDAO.dart';
 import 'package:flutterapp/classesObjeto/ItemPedidoClasse.dart';
 import 'package:flutterapp/classesObjeto/PedidoClasse.dart';
 import 'package:flutterapp/telasApp/TelaNotaFiscal.dart';
-// import '../classesDAO/ProdutoDAO.dart';
+import 'package:pdf/pdf.dart';
 import '../classesObjeto/ProdutoClasse.dart';
 
 class TelaQuantidadeProdutosPedido extends StatefulWidget {
-
   late final List<Produto> produtosSelecionados;
   TelaQuantidadeProdutosPedido({required this.produtosSelecionados});
 
@@ -92,6 +92,9 @@ class _TelaQuantidadeProdutosPedidoState
                   width: 60,
                   child: TextField(
                     keyboardType: TextInputType.number,
+                    inputFormatters: <TextInputFormatter>[
+                      FilteringTextInputFormatter.digitsOnly,
+                    ],
                     onChanged: (value) {
                       int quantidade = int.tryParse(value) ?? 0;
                       setState(() {
@@ -130,55 +133,105 @@ class _TelaQuantidadeProdutosPedidoState
                   SizedBox(height: 20),
                   ElevatedButton(
                     onPressed: () async {
-                      double valorTotal = calcularValorTotal().toDouble();
+                      bool quantidadeInvalida = false;
 
-                      DateTime atual = DateTime.now();
-                      String dataAtual = '${atual.day}/${atual.month}/${atual.year}';
-                      String horarioAtual = '${atual.hour}:${atual.minute}:${atual.second}';
-
-                      Pedido venda = Pedido(dataPedido:  dataAtual, horarioPedido: horarioAtual, valorTotal: valorTotal);
-
-                      DocumentReference<Object?>? pedidoID = await PedidoDAO().cadastrarPedido(venda);
-
-                      if (pedidoID != null){
-                        idPedido = pedidoID.id;
+                      for (int quantidade in quantidades) {
+                        if (quantidade <= 0) {
+                          quantidadeInvalida = true;
+                          break;
+                        }
                       }
-                      List<ItemPedido> itensPedidos = [];
+                      if (quantidadeInvalida) {
+                        showDialog(
+                          context: context,
+                          builder: (BuildContext context) {
+                            return AlertDialog(
+                              title: Text('Erro'),
+                              content: Text(
+                                  'Adicione pelo menos 1 produto em cada campo'),
+                              actions: <Widget>[
+                                TextButton(
+                                  onPressed: () {
+                                    Navigator.of(context)
+                                        .pop();
+                                  },
+                                  child: Text('OK'),
+                                ),
+                              ],
+                            );
+                          },
+                        );
+                      } else {
+                        double valorTotal = calcularValorTotal().toDouble();
 
-                      int index = 0;
-                      for (Produto produto in widget.produtosSelecionados){
-                        ItemPedido itens = ItemPedido(idPedido: idPedido, pedido: venda, produto: widget.produtosSelecionados[index], quantidade: quantidades[index]);
-                        ItemPedidoDAO().cadastrarItens(itens);
-                        index++;
-                        itensPedidos.add(itens);
+                        DateTime atual = DateTime.now();
+                        String dataAtual =
+                            '${atual.day}/${atual.month}/${atual.year}';
+                        String horarioAtual =
+                            '${atual.hour}:${atual.minute}:${atual.second}';
+
+                        Pedido venda = Pedido(
+
+                            dataPedido: dataAtual,
+                            horarioPedido: horarioAtual,
+                            valorTotal: valorTotal);
+
+                        DocumentReference<Object?>? pedidoID =
+                            await PedidoDAO().cadastrarPedido(venda);
+
+                        if (pedidoID != null) {
+                          idPedido = pedidoID.id;
+                        }
+                        List<ItemPedido> itensPedidos = [];
+                        print(idPedido);
+                        venda.docRef = idPedido;
+
+                        int index = 0;
+                        for (Produto produto in widget.produtosSelecionados) {
+                          ItemPedido itens = ItemPedido(
+                              idPedido: idPedido,
+                              pedido: venda,
+                              produto: widget.produtosSelecionados[index],
+                              quantidade: quantidades[index]);
+                          ItemPedidoDAO().cadastrarItens(itens);
+                          index++;
+                          itensPedidos.add(itens);
+                        }
+                        print("Itens do Pedido:");
+                        for (ItemPedido item in itensPedidos) {
+                          print("Produto: ${item.produto.nome}");
+                          print("Quantidade: ${item.quantidade}");
+                          print("Valor unitario: ${item.produto.valor}");
+                          print(
+                              "Valor total: R\$${item.produto.valor * item.quantidade}");
+                          print("Data: ${item.pedido.dataPedido}");
+                          print("Horario: ${item.pedido.horarioPedido}");
+                          print("-------------");
+                        }
+                        print(idPedido);
+                        PedidoDAO().adicionarID(idPedido, venda);
+
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => TelaNotaFiscal(
+                                  pedido: venda,
+                                  idPedido: idPedido,
+                                  itensPedidos: itensPedidos)),
+                        );
                       }
-                      print("Itens do Pedido:");
-                      for (ItemPedido item in itensPedidos) {
-                        print("Produto: ${item.produto.nome}");
-                        print("Quantidade: ${item.quantidade}");
-                        print("Valor unitario: ${item.produto.valor}");
-                        print("Valor total: R\$${item.produto.valor * item.quantidade}");
-                        print("Data: ${item.pedido.dataPedido}");
-                        print("Horario: ${item.pedido.horarioPedido}");
-                        print("-------------");
-                      }
-                      
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => TelaNotaFiscal(pedido: venda, idPedido: idPedido)),
-                      );
-                  },
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.orange,
-                    minimumSize: Size(150, 50),
-                  ),
-                  child: Text('Finalizar Pedido',
-                  style: TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white,
+                    },
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.orange,
+                      minimumSize: Size(150, 50),
                     ),
-                    
+                    child: Text(
+                      'Finalizar Pedido',
+                      style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                      ),
                     ),
                   ),
                 ],
