@@ -207,6 +207,7 @@ class _CadastrarProdutoState extends State<TelaCadastrarProduto> {
                             double.parse(pesoProdutoController.text);
                         String descricaoProduto =
                             descricaoProdutoController.text;
+                        String categoria = categoriaProdutoController.text;
 
                         //Cria o objeto produto
                         Produto produto = Produto(
@@ -214,7 +215,9 @@ class _CadastrarProdutoState extends State<TelaCadastrarProduto> {
                             peso: pesoProduto,
                             valor: precoProduto,
                             quantidadeEstoque: quantidadeProduto,
-                            descricao: descricaoProduto);
+                            descricao: descricaoProduto,
+                            categoria: categoria,
+                            );
 
                         ProdutoDAO().cadastrarProduto(produto);
 

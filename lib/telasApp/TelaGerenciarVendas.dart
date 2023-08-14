@@ -77,7 +77,6 @@ class _GerenciarVendasState extends State<TelaGerenciarVendas> {
       print('Erro ao excluir produto: $error');
     });
   }
-  
 
   @override
   void initState() {
@@ -97,8 +96,6 @@ class _GerenciarVendasState extends State<TelaGerenciarVendas> {
       ),
     ];
 
-    var filtroBusca;
-
     return MaterialApp(
         home: Scaffold(
       appBar: PreferredSize(
@@ -109,7 +106,7 @@ class _GerenciarVendasState extends State<TelaGerenciarVendas> {
             return AppBar(
               flexibleSpace: Container(
                 height: appBarHeight,
-                child: CabecalhoWidget(textoTitulo: 'Estoque de Produtos'),
+                child: CabecalhoWidget(textoTitulo: 'Historico de Vendas'),
               ),
             );
           },
@@ -121,77 +118,48 @@ class _GerenciarVendasState extends State<TelaGerenciarVendas> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Row(
-                children: [
-                  SizedBox(width: 10),
-                  Expanded(
-                    child: Container(
-                      padding: EdgeInsets.symmetric(horizontal: 30.0),
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(30.0),
-                        border: Border.all(),
-                      ),
-                      child: DropdownButtonFormField<String>(
-                        value: filtroBusca,
-                        items: filtros,
-                        onChanged: (novoFiltro) {
-                          setState(() {
-                            // filtroBusca = novoFiltro!;
-                            // if (filtroBusca == 'Maior quantidade') {
-                            //   produtos = ordenarPorMaiorQuantidade(produtos);
-                            //   ordenarPorMaior = true;
-                            // } else if (filtroBusca == 'Menor quantidade') {
-                            //   produtos = ordenarPorMenorQuantidade(produtos);
-                            //   ordenarPorMaior = false;
-                            // }
-                          });
-                        },
-                        decoration: InputDecoration(
-                          labelText: 'Ordenar por:',
-                          border: InputBorder.none,
-                          contentPadding: EdgeInsets.symmetric(
-                          vertical: 10.0, horizontal: 10.0),
-                        ),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
               SizedBox(height: 16.0),
               Row(
                 children: [
-                  Padding(
-                    padding:
-                        EdgeInsets.only(left: 20),
-                    child: Text(
-                      'Data',
-                      style: TextStyle(fontSize: 15),
+                  Expanded(
+                    child: Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 10),
+                      child: Text(
+                        'Data',
+                        style: TextStyle(fontSize: 17),
+                      ),
                     ),
                   ),
-                  Padding(
-                    padding:
-                        EdgeInsets.only(left: 60),
-                    child: Text(
-                      ' Valor Total',
-                      style: TextStyle(fontSize: 15),
+                  Flexible(
+                    flex: 0,
+                    child: Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 10),
+                      child: Text(
+                        'Valor Total',
+                        style: TextStyle(fontSize: 17),
+                      ),
                     ),
                   ),
-                  Padding(
-                    padding:
-                        EdgeInsets.only(left: 30),
-                    child: Text(
-                      'Deletar',
-                      style: TextStyle(fontSize: 15),
+                  Flexible(
+                    flex: 0,
+                    child: Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 10),
+                      child: Text(
+                        'Deletar',
+                        style: TextStyle(fontSize: 17),
+                      ),
                     ),
                   ),
-                  Padding(
-                    padding:
-                        EdgeInsets.only(left: 30),
-                    child: Text(
-                      '   Exibir\nDetalhes',
-                      style: TextStyle(fontSize: 15),
+                  Flexible(
+                    flex: 0,
+                    child: Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 10),
+                      child: Text(
+                        '  Exibir\nDetalhes',
+                        style: TextStyle(fontSize: 17),
+                      ),
                     ),
-                  )
+                  ),
                 ],
               ),
               ListView.separated(
@@ -217,7 +185,8 @@ class _GerenciarVendasState extends State<TelaGerenciarVendas> {
                             children: [
                               Text('${pedido.dataPedido}'),
                               Spacer(flex: 2),
-                              Text('R\$${pedido.valorTotal.toStringAsFixed(2).replaceAll('.', ',')}'),
+                              Text(
+                                  'R\$${pedido.valorTotal.toStringAsFixed(2).replaceAll('.', ',')}'),
                               Spacer(flex: 1),
                             ],
                           ),

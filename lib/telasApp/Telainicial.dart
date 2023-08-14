@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutterapp/cakebossapp/generatedtelainicialwidget/generated/CabecalhoWidget.dart';
 import 'package:flutterapp/telasApp/TelaAddProdutoVenda.dart';
 import 'package:flutterapp/telasApp/TelaCadastrarProduto.dart';
-import 'package:flutterapp/telasApp/TelaAddProdutoEstoque.dart';
-import 'package:flutterapp/telasApp/TelaEstatistica.dart';
 import 'package:flutterapp/telasApp/TelaEstoqueProduto.dart';
+import 'TelaEstatistica.dart';
+import 'TelaGerenciarEstoque.dart';
 import 'TelaGerenciarVendas.dart';
 
 
@@ -250,7 +250,7 @@ class TelaInicialWidget extends StatelessWidget {
                           onPressed: () {
                             Navigator.push(
                               context,
-                              MaterialPageRoute(builder: (context) => TelaAddProdutoEstoqueWidget()),
+                              MaterialPageRoute(builder: (context) => TelaGerenciarEstoqueWidget()),
                               );
                           },
                           style: ElevatedButton.styleFrom(

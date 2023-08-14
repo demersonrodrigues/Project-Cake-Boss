@@ -6,6 +6,7 @@ import 'package:flutterapp/classesObjeto/ItemPedidoClasse.dart';
 import 'package:flutterapp/classesObjeto/NotaFiscalClasse.dart';
 import 'package:open_file/open_file.dart';
 import '../classesObjeto/PedidoClasse.dart';
+import 'TelaInicial.dart';
 
 
 class TelaNotaFiscal extends StatefulWidget {
@@ -133,6 +134,11 @@ class _NotaFiscalState extends State<TelaNotaFiscal> {
                         PedidoDAO().nomeMetodoPagamento(widget.idPedido, widget.pedido);
                         _downloadAndOpenPDF(context);
 
+                        Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => TelaInicialWidget()),
+                      );
 
                       },
                       style: ElevatedButton.styleFrom(
