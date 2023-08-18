@@ -7,7 +7,6 @@ import 'package:flutterapp/classesDAO/PedidoDAO.dart';
 import 'package:flutterapp/classesObjeto/ItemPedidoClasse.dart';
 import 'package:flutterapp/classesObjeto/PedidoClasse.dart';
 import 'package:flutterapp/telasApp/TelaNotaFiscal.dart';
-import 'package:pdf/pdf.dart';
 import '../classesObjeto/ProdutoClasse.dart';
 
 class TelaQuantidadeProdutosPedido extends StatefulWidget {

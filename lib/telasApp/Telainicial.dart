@@ -3,9 +3,10 @@ import 'package:flutterapp/cakebossapp/generatedtelainicialwidget/generated/Cabe
 import 'package:flutterapp/telasApp/TelaAddProdutoVenda.dart';
 import 'package:flutterapp/telasApp/TelaCadastrarProduto.dart';
 import 'package:flutterapp/telasApp/TelaEstoqueProduto.dart';
-import 'TelaEstatistica.dart';
-import 'TelaGerenciarEstoque.dart';
-import 'TelaGerenciarVendas.dart';
+import 'package:flutterapp/telasApp/TelaPrecificar.dart';
+import 'package:flutterapp/telasApp/TelaEstatistica.dart';
+import 'package:flutterapp/telasApp/TelaGerenciarEstoque.dart';
+import 'package:flutterapp/telasApp/TelaGerenciarVendas.dart';
 
 
 class TelaInicialWidget extends StatelessWidget {
@@ -81,7 +82,10 @@ class TelaInicialWidget extends StatelessWidget {
                         height: 140,
                         child: ElevatedButton(
                           onPressed: () {
-                            // chama a tela de precificar produto
+                             Navigator.push(
+                            context,
+                           MaterialPageRoute(builder: (context) => TelaPrecificar()), 
+                          );
                           },
                           style: ElevatedButton.styleFrom(
                             padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
@@ -121,7 +125,7 @@ class TelaInicialWidget extends StatelessWidget {
                           onPressed: () {
                             Navigator.push(
                             context,
-                            MaterialPageRoute(builder: (context) => TelaGerenciarVendas()),
+                           MaterialPageRoute(builder: (context) => TelaGerenciarVendas()), 
                           );
                           },
                           
