@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:flutterapp/cakebossapp/generatedtelainicialwidget/generated/CabecalhoWidget.dart';
 import 'package:flutterapp/classesDAO/ProdutoDAO.dart';
 import 'package:flutterapp/classesObjeto/ProdutoClasse.dart';
+import 'package:flutterapp/classesObjeto/ReceitaClassse.dart';
 import 'package:flutterapp/telasApp/TelaCadastrarProduto.dart';
 import 'package:flutterapp/telasApp/TelaIngredientes.dart';
 import 'package:flutterapp/telasApp/TelaAddProdutoVenda.dart';
@@ -121,16 +122,25 @@ class _PrecificarState extends State<TelaPrecificar> {
                   padding: EdgeInsets.only(top: 20),
                   child: ElevatedButton(
                     onPressed: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => TelaIngredientes()));
+                      Receita receita = Receita();
                       //Cria as variaveis pegando o valor digitado pelo usuario
-                      String nomeProduto = nomeReceitaController.text;
-                      double precoProduto =
-                          double.parse(rendimentoController.text);
-                      int quantidadeProduto = int.parse(lucroController.text);
-                      String descricaoProduto = listaMateriaisController.text;
+                      String nome = nomeReceitaController.text;
+                      double rendimento = double.parse(rendimentoController.text);
+                      double lucro = double.parse(lucroController.text);
+                      receita.lucro = lucro;
+                      receita.rendimento = rendimento;
+                      receita.nome = nome;
+
+                      Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => TelaIngredientes(
+                      receita: receita,
+                    ),
+                  ),
+                );
+                     
+                      
 
                     },
                     style: ElevatedButton.styleFrom(
@@ -140,7 +150,7 @@ class _PrecificarState extends State<TelaPrecificar> {
                         elevation: 10,
                         minimumSize: Size(200, 50)),
                     child: Text(
-                      'Próximo',
+                      'Inserir Ingredientes',
                       style: TextStyle(fontSize: 20, color: Colors.white),
                     ),
                   ),

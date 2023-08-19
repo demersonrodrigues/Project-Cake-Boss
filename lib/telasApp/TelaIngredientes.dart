@@ -3,12 +3,19 @@ import 'package:flutter/services.dart';
 import 'package:flutterapp/cakebossapp/generatedtelainicialwidget/generated/CabecalhoWidget.dart';
 import 'package:flutterapp/classesDAO/ProdutoDAO.dart';
 import 'package:flutterapp/classesObjeto/ProdutoClasse.dart';
+import 'package:flutterapp/classesObjeto/ReceitaClassse.dart';
 import 'package:flutterapp/telasApp/TelaInicial.dart';
 import 'package:flutterapp/telasApp/TelaPrecificar.dart';
 
+import '../classesObjeto/IngredienteClasse.dart';
+import 'TelaPrecoSugerido.dart';
+
 class TelaIngredientes extends StatefulWidget {
+  late final Receita receita;
+  TelaIngredientes({required this.receita});
   @override
   IngredientesState createState() => IngredientesState();
+  
 }
 
 class IngredientesState extends State<TelaIngredientes> {
@@ -17,6 +24,7 @@ class IngredientesState extends State<TelaIngredientes> {
   TextEditingController custoIngredienteController = TextEditingController();
   TextEditingController volumeIngredienteController = TextEditingController();
   TextEditingController quantidadeUtilizadaController = TextEditingController();
+  List<Ingrediente> ingredientes = []; 
 
   @override
   void dispose() {
@@ -135,7 +143,25 @@ class IngredientesState extends State<TelaIngredientes> {
                       double quantidadeUtilizada =
                           double.parse(quantidadeUtilizadaController.text);
 
+
+                      Ingrediente ingrediente = Ingrediente();
+                      ingrediente.valor = custoIngrediente;
+                      ingrediente.peso = volumeIngrediente;
+                      ingrediente.nome = nomeIngrediente;
+                      ingrediente.quantidade = quantidadeUtilizada;
+                      ingrediente.custo = ingrediente.valor! / ingrediente.peso! * ingrediente.quantidade!;
+                      ingredientes.add(ingrediente);
+                      for(Ingrediente ingrediente in ingredientes){
+                        print(ingrediente.nome);
+                        print(ingrediente.custo);
+                      }
+
+                
                       // limpar as caixas de textos e salvar em uma lista
+                      custoIngredienteController.clear();
+                      volumeIngredienteController.clear();
+                      nomeIngredienteController.clear();
+                      quantidadeUtilizadaController.clear();
                     },
                     style: ElevatedButton.styleFrom(
                         backgroundColor: Colors.red,
@@ -151,10 +177,17 @@ class IngredientesState extends State<TelaIngredientes> {
                   padding: EdgeInsets.only(top: 20),
                   child: ElevatedButton(
                     onPressed: () {
+                      int index = 0;
+                      double custototal = 0;
+                      for(Ingrediente ingrediente in ingredientes){
+                          custototal += ingredientes[index].custo!;
+                          index++;
+                      }
+                      double precosugerido = custototal * widget.receita.lucro! /100 / widget.receita.rendimento!;
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => TelaPrecificar()),
+                            builder: (context) => TelaPrecoSugerido(ingredientes: ingredientes, receita: widget.receita, custototal: custototal, precosugerido: precosugerido)),
                       );
                     },
                     style: ElevatedButton.styleFrom(
