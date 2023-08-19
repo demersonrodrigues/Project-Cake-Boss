@@ -1,6 +1,4 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:flutterapp/classesObjeto/ItemPedidoClasse.dart';
-import 'package:flutterapp/classesObjeto/ProdutoClasse.dart';
 
 import '../classesObjeto/PedidoClasse.dart';
 

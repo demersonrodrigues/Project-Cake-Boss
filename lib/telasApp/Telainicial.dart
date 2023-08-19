@@ -1,8 +1,8 @@
+import 'package:CakeBoss/cakebossapp/generatedtelainicialwidget/generated/CabecalhoWidget.dart';
+import 'package:CakeBoss/telasApp/TelaAddProdutoVenda.dart';
+import 'package:CakeBoss/telasApp/TelaCadastrarProduto.dart';
+import 'package:CakeBoss/telasApp/TelaEstoqueProduto.dart';
 import 'package:flutter/material.dart';
-import 'package:flutterapp/cakebossapp/generatedtelainicialwidget/generated/CabecalhoWidget.dart';
-import 'package:flutterapp/telasApp/TelaAddProdutoVenda.dart';
-import 'package:flutterapp/telasApp/TelaCadastrarProduto.dart';
-import 'package:flutterapp/telasApp/TelaEstoqueProduto.dart';
 import 'TelaEstatistica.dart';
 import 'TelaGerenciarEstoque.dart';
 import 'TelaGerenciarVendas.dart';

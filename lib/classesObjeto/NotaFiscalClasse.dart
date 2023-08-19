@@ -1,8 +1,8 @@
-import 'package:flutterapp/classesObjeto/ItemPedidoClasse.dart';
-
 import 'dart:io';
 import 'package:path_provider/path_provider.dart';
 import 'package:pdf/widgets.dart' as pw;
+
+import 'ItemPedidoClasse.dart';
 
 class NotaFiscal{
   int? idNotaFiscal;

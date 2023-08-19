@@ -1,6 +1,6 @@
+import 'package:CakeBoss/classesDAO/PedidoDAO.dart';
 import 'package:flutter/material.dart';
-import 'package:flutterapp/cakebossapp/generatedtelainicialwidget/generated/CabecalhoWidget.dart';
-import 'package:flutterapp/classesDAO/PedidoDAO.dart';
+import '../cakebossapp/generatedtelainicialwidget/generated/CabecalhoWidget.dart';
 
 
 class TelaEstatistica extends StatefulWidget {

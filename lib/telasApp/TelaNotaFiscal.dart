@@ -1,10 +1,10 @@
 import 'dart:io';
+import 'package:CakeBoss/classesDAO/PedidoDAO.dart';
 import 'package:flutter/material.dart';
-import 'package:flutterapp/cakebossapp/generatedtelainicialwidget/generated/CabecalhoWidget.dart';
-import 'package:flutterapp/classesDAO/PedidoDAO.dart';
-import 'package:flutterapp/classesObjeto/ItemPedidoClasse.dart';
-import 'package:flutterapp/classesObjeto/NotaFiscalClasse.dart';
 import 'package:open_file/open_file.dart';
+import '../cakebossapp/generatedtelainicialwidget/generated/CabecalhoWidget.dart';
+import '../classesObjeto/ItemPedidoClasse.dart';
+import '../classesObjeto/NotaFiscalClasse.dart';
 import '../classesObjeto/PedidoClasse.dart';
 import 'TelaInicial.dart';
 

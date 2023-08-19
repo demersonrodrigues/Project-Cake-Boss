@@ -1,14 +1,13 @@
+import 'package:CakeBoss/cakebossapp/generatedtelainicialwidget/generated/CabecalhoWidget.dart';
+import 'package:CakeBoss/classesDAO/ItemPedidoDAO.dart';
+import 'package:CakeBoss/classesObjeto/ItemPedidoClasse.dart';
+import 'package:CakeBoss/classesObjeto/PedidoClasse.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutterapp/cakebossapp/generatedtelainicialwidget/generated/CabecalhoWidget.dart';
-import 'package:flutterapp/classesDAO/ItemPedidoDAO.dart';
-import 'package:flutterapp/classesDAO/PedidoDAO.dart';
-import 'package:flutterapp/classesObjeto/ItemPedidoClasse.dart';
-import 'package:flutterapp/classesObjeto/PedidoClasse.dart';
-import 'package:flutterapp/telasApp/TelaNotaFiscal.dart';
-import 'package:pdf/pdf.dart';
+import '../classesDAO/PedidoDAO.dart';
 import '../classesObjeto/ProdutoClasse.dart';
+import 'TelaNotaFiscal.dart';
 
 class TelaQuantidadeProdutosPedido extends StatefulWidget {
   late final List<Produto> produtosSelecionados;

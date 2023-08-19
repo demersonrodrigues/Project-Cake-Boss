@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutterapp/cakebossapp/generatedtelainicialwidget/generated/CabecalhoWidget.dart';
-import 'package:flutterapp/telasApp/TelaQuantidadeProdutoPedido.dart';
+import '../cakebossapp/generatedtelainicialwidget/generated/CabecalhoWidget.dart';
 import '../classesDAO/ProdutoDAO.dart';
 import '../classesObjeto/ProdutoClasse.dart';
+import 'TelaQuantidadeProdutoPedido.dart';
 
 class TelaAddProdutoVenda extends StatefulWidget {
   @override

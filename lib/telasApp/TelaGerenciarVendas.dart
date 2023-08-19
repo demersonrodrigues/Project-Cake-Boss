@@ -1,10 +1,8 @@
+import 'package:CakeBoss/classesDAO/ItemPedidoDAO.dart';
 import 'package:flutter/material.dart';
-import 'package:flutterapp/cakebossapp/generatedtelainicialwidget/generated/CabecalhoWidget.dart';
-import 'package:flutterapp/classesDAO/ItemPedidoDAO.dart';
+import '../cakebossapp/generatedtelainicialwidget/generated/CabecalhoWidget.dart';
 import '../classesDAO/PedidoDAO.dart';
-import '../classesDAO/ProdutoDAO.dart';
 import '../classesObjeto/PedidoClasse.dart';
-import '../classesObjeto/ProdutoClasse.dart';
 
 class TelaGerenciarVendas extends StatefulWidget {
   @override
@@ -14,7 +12,6 @@ class TelaGerenciarVendas extends StatefulWidget {
 class _GerenciarVendasState extends State<TelaGerenciarVendas> {
   List<Pedido> pedidos = [];
   List<bool> isExpandedList = [];
-  bool ordenarPorMaior = true;
 
   Future<void> _mostrarDetalhesItens(String docRef) async {
     print(docRef);
@@ -47,18 +44,6 @@ class _GerenciarVendasState extends State<TelaGerenciarVendas> {
     );
   }
 
-  // List<Pedido> ordenarPorMaiorQuantidade(List<Pedido> listaProdutos) {
-  //   listaProdutos
-  //       .sort((a, b) => b.quantidadeEstoque.compareTo(a.quantidadeEstoque));
-  //   return listaProdutos;
-  // }
-
-  // List<Produto> ordenarPorMenorQuantidade(List<Produto> listaProdutos) {
-  //   listaProdutos
-  //       .sort((a, b) => a.quantidadeEstoque.compareTo(b.quantidadeEstoque));
-  //   return listaProdutos;
-  // }
-
   void carregarPedidos() async {
     List<Pedido> produtosFirebase = await PedidoDAO().listarPedidos();
     setState(() {
@@ -85,17 +70,6 @@ class _GerenciarVendasState extends State<TelaGerenciarVendas> {
   }
 
   Widget build(BuildContext context) {
-    List<DropdownMenuItem<String>> filtros = [
-      DropdownMenuItem(
-        value: 'Maior quantidade',
-        child: Text('Maior quantidade'),
-      ),
-      DropdownMenuItem(
-        value: 'Menor quantidade',
-        child: Text('Menor quantidade'),
-      ),
-    ];
-
     return MaterialApp(
         home: Scaffold(
       appBar: PreferredSize(

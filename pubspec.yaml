@@ -1,5 +1,5 @@
-description: "A new Flutter application."
-name: "flutterapp"
+description: "Gerenciamento de estoque e vendas"
+name: "CakeBoss"
 publish_to: "none"
 version: "1.0.0+1"
 dependencies: 

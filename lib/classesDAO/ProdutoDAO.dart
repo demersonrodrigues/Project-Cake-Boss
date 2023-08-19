@@ -1,6 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:flutterapp/classesObjeto/ProdutoClasse.dart';
+
+import '../classesObjeto/ProdutoClasse.dart';
+
 
 class ProdutoDAO {
   final CollectionReference produtosCollection =

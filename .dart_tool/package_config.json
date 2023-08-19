@@ -374,13 +374,13 @@
       "languageVersion": "2.19"
     },
     {
-      "name": "flutterapp",
+      "name": "CakeBoss",
       "rootUri": "../",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     }
   ],
-  "generated": "2023-08-14T05:39:31.233229Z",
+  "generated": "2023-08-14T06:53:05.782396Z",
   "generator": "pub",
   "generatorVersion": "3.0.2"
 }

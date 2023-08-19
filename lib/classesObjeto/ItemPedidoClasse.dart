@@ -1,5 +1,4 @@
-import 'package:flutterapp/classesObjeto/PedidoClasse.dart';
-
+import 'PedidoClasse.dart';
 import 'ProdutoClasse.dart';
 
 class ItemPedido{

@@ -1,6 +1,6 @@
+import 'package:CakeBoss/classesDAO/ProdutoDAO.dart';
 import 'package:flutter/material.dart';
-import 'package:flutterapp/cakebossapp/generatedtelainicialwidget/generated/CabecalhoWidget.dart';
-import 'package:flutterapp/classesDAO/ProdutoDAO.dart';
+import '../cakebossapp/generatedtelainicialwidget/generated/CabecalhoWidget.dart';
 import '../classesObjeto/ProdutoClasse.dart';
 
 class TelaEstoqueProduto extends StatefulWidget {
