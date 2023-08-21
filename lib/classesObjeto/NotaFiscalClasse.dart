@@ -23,8 +23,10 @@ class NotaFiscal{
               crossAxisAlignment: pw.CrossAxisAlignment.start,
               children: [
                 pw.Text('Data: ${itens[0].pedido.dataPedido}   Horario: ${itens[0].pedido.horarioPedido}'),
-                pw.Text('Delicias Da Joice', style: pw.TextStyle(fontSize: 30)),
-                pw.SizedBox(height: 10),
+                pw.Text('Delicias Da Joice', style: pw.TextStyle(fontSize: 25)),
+                pw.SizedBox(height: 1),
+                pw.Text('Whatsapp: (71)9 9948-8681', style: pw.TextStyle(fontSize: 8)),
+                pw.SizedBox(height: 5),
                 pw.Text('Cliente: ${itens[0].pedido.cliente}   Metodo de pagamento: ${itens[0].pedido.metodoPagamento}'),
                 pw.SizedBox(height: 10),
                 pw.Text('================================='),
@@ -38,7 +40,7 @@ class NotaFiscal{
                         crossAxisAlignment: pw.CrossAxisAlignment.start,
                         children: [
                           pw.Text('${item.produto.nome} ${item.produto.peso}g'),
-                          pw.Text('${item.quantidade} x ${item.produto.valor}                                 R\$${item.quantidade * item.produto.valor}'),
+                          pw.Text('${item.quantidade} x R\$${item.produto.valor}                                   R\$${item.quantidade * item.produto.valor}'),
                           pw.Text('---------------------------------------------------'),
                         ],
                       ),
