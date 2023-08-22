@@ -1,5 +1,5 @@
-description: "A new Flutter application."
-name: "flutterapp"
+description: "Gerenciamento de estoque e vendas"
+name: "CakeBoss"
 publish_to: "none"
 version: "1.0.0+1"
 dependencies: 
@@ -7,6 +7,14 @@ dependencies:
   path_drawing: "^1.0.0"
   flutter: 
     sdk: "flutter"
+  firebase_core: ^2.14.0
+  cloud_firestore: ^4.8.2
+  printing: ^5.9.1
+  pdf: ^3.8.1
+  path_provider: ^2.1.0
+  open_file: ^3.2.1
+  google_fonts: ^2.1.0
+  snackbar: ^1.0.2
 dev_dependencies: 
   flutter_test: 
     sdk: "flutter"

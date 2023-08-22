@@ -1,8 +1,14 @@
+import 'package:CakeBoss/telasApp/TelaInicial.dart';
 import 'package:flutter/material.dart';
-import 'package:flutterapp/cakebossapp/generatedtelainicialwidget/GeneratedTelainicialWidget.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
 
-void main() {
+void main() async {
   runApp(CakeBossApp());
+
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
 }
 
 class CakeBossApp extends StatelessWidget {
@@ -16,7 +22,7 @@ class CakeBossApp extends StatelessWidget {
       initialRoute: '/TelainicialWidget',
       routes: {
         '/TelainicialWidget': (context) =>
-            TelainicialWidget(),
+            TelaInicialWidget(),
       },
     );
   }
