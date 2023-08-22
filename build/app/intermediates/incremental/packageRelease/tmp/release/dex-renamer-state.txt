@@ -1,4 +1,4 @@
-#Sun Aug 13 04:30:22 BRT 2023
-base.0=C\:\\Users\\vitor\\OneDrive\\Documentos\\GitHub\\Project-Cake-Boss\\build\\app\\intermediates\\dex\\release\\minifyReleaseWithR8\\classes.dex
+#Sun Aug 20 23:35:13 BRT 2023
+base.0=C\:\\Users\\Shadow\\Documents\\GitHub\\Project-Cake-Boss\\build\\app\\intermediates\\dex\\release\\minifyReleaseWithR8\\classes.dex
 path.0=classes.dex
 renamed.0=classes.dex

@@ -47,7 +47,7 @@
 31-->[androidx.core:core:1.9.0] C:\Users\Shadow\.gradle\caches\transforms-3\1a33a8a83c7f577c4444b9d2b565b8c3\transformed\core-1.9.0\AndroidManifest.xml:28:18-86
 32        android:debuggable="true"
 33        android:icon="@mipmap/ic_launcher"
-34        android:label="projeto_teste" >
+34        android:label="Cake Boss" >
 35        <activity
 36            android:name="com.example.projeto_teste.MainActivity"
 37            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"

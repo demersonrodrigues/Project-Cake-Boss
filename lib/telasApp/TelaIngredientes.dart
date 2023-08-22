@@ -168,7 +168,7 @@ class IngredientesState extends State<TelaIngredientes> {
                         elevation: 10,
                         minimumSize: Size(200, 50)),
                     child: Text(
-                      'Adicionar outro Ingrediente',
+                      'Adicionar',
                       style: TextStyle(fontSize: 20, color: Colors.white),
                     ),
                   ),
@@ -183,7 +183,7 @@ class IngredientesState extends State<TelaIngredientes> {
                           custototal += ingredientes[index].custo!;
                           index++;
                       }
-                      double precosugerido = custototal * widget.receita.lucro! /100 / widget.receita.rendimento!;
+                      double precosugerido = custototal/widget.receita.rendimento! + custototal * widget.receita.lucro! /100 / widget.receita.rendimento!;
                       Navigator.push(
                         context,
                         MaterialPageRoute(

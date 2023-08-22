@@ -102,22 +102,7 @@ class _PrecificarState extends State<TelaPrecificar> {
                   ],
                 ),
                 SizedBox(height: 16.0),
-                Row(
-                  children: [
-                    Expanded(
-                      child: TextField(
-                        controller: listaMateriaisController,
-                        decoration: InputDecoration(
-                          contentPadding: EdgeInsets.symmetric(
-                              vertical: 25, horizontal: 10),
-                          labelText: 'Lista de Materiais',
-                          border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(10)),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
+                
                 Padding(
                   padding: EdgeInsets.only(top: 20),
                   child: ElevatedButton(
@@ -139,8 +124,6 @@ class _PrecificarState extends State<TelaPrecificar> {
                     ),
                   ),
                 );
-                     
-                      
 
                     },
                     style: ElevatedButton.styleFrom(
