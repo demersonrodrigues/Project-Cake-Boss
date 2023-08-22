@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #Mon Aug 21 14:30:08 BRT 2023
 base.0=C\:\\Users\\vitor\\OneDrive\\Documentos\\GitHub\\Project-Cake-Boss\\build\\app\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
 base.1=C\:\\Users\\vitor\\OneDrive\\Documentos\\GitHub\\Project-Cake-Boss\\build\\app\\intermediates\\dex\\debug\\mergeLibDexDebug\\0\\classes.dex
@@ -5,6 +6,15 @@ base.2=C\:\\Users\\vitor\\OneDrive\\Documentos\\GitHub\\Project-Cake-Boss\\build
 base.3=C\:\\Users\\vitor\\OneDrive\\Documentos\\GitHub\\Project-Cake-Boss\\build\\app\\intermediates\\dex\\debug\\mergeProjectDexDebug\\1\\classes.dex
 base.4=C\:\\Users\\vitor\\OneDrive\\Documentos\\GitHub\\Project-Cake-Boss\\build\\app\\intermediates\\dex\\debug\\mergeProjectDexDebug\\8\\classes.dex
 base.5=C\:\\Users\\vitor\\OneDrive\\Documentos\\GitHub\\Project-Cake-Boss\\build\\app\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes2.dex
+=======
+#Sun Aug 20 23:31:45 BRT 2023
+base.0=C\:\\Users\\Shadow\\Documents\\GitHub\\Project-Cake-Boss\\build\\app\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
+base.1=C\:\\Users\\Shadow\\Documents\\GitHub\\Project-Cake-Boss\\build\\app\\intermediates\\dex\\debug\\mergeLibDexDebug\\0\\classes.dex
+base.2=C\:\\Users\\Shadow\\Documents\\GitHub\\Project-Cake-Boss\\build\\app\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex
+base.3=C\:\\Users\\Shadow\\Documents\\GitHub\\Project-Cake-Boss\\build\\app\\intermediates\\dex\\debug\\mergeProjectDexDebug\\1\\classes.dex
+base.4=C\:\\Users\\Shadow\\Documents\\GitHub\\Project-Cake-Boss\\build\\app\\intermediates\\dex\\debug\\mergeProjectDexDebug\\8\\classes.dex
+base.5=C\:\\Users\\Shadow\\Documents\\GitHub\\Project-Cake-Boss\\build\\app\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes2.dex
+>>>>>>> 2a915d008379c2920107c37396bc9bcbbfa2e02f
 path.0=classes.dex
 path.1=0/classes.dex
 path.2=0/classes.dex

@@ -5,7 +5,16 @@ import 'package:CakeBoss/classesObjeto/PedidoClasse.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+<<<<<<< HEAD
 import '../classesDAO/PedidoDAO.dart';
+=======
+import 'package:flutterapp/cakebossapp/generatedtelainicialwidget/generated/CabecalhoWidget.dart';
+import 'package:flutterapp/classesDAO/ItemPedidoDAO.dart';
+import 'package:flutterapp/classesDAO/PedidoDAO.dart';
+import 'package:flutterapp/classesObjeto/ItemPedidoClasse.dart';
+import 'package:flutterapp/classesObjeto/PedidoClasse.dart';
+import 'package:flutterapp/telasApp/TelaNotaFiscal.dart';
+>>>>>>> 2a915d008379c2920107c37396bc9bcbbfa2e02f
 import '../classesObjeto/ProdutoClasse.dart';
 import 'TelaNotaFiscal.dart';
 
