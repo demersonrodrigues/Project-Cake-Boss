@@ -1,14 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutterapp/cakebossapp/generatedtelainicialwidget/generated/CabecalhoWidget.dart';
-import 'package:flutterapp/classesDAO/ProdutoDAO.dart';
-import 'package:flutterapp/classesObjeto/ProdutoClasse.dart';
-import 'package:flutterapp/classesObjeto/ReceitaClassse.dart';
-import 'package:flutterapp/telasApp/TelaCadastrarProduto.dart';
-import 'package:flutterapp/telasApp/TelaIngredientes.dart';
-import 'package:flutterapp/telasApp/TelaAddProdutoVenda.dart';
-import 'package:flutterapp/telasApp/TelaEstoqueProduto.dart';
-import 'TelaQuantidadeProdutoPedido.dart';
+import '../cakebossapp/generatedtelainicialwidget/generated/CabecalhoWidget.dart';
+import '../classesObjeto/ReceitaClassse.dart';
+import 'TelaIngredientes.dart';
 
 class TelaPrecificar extends StatefulWidget {
   @override
@@ -102,29 +96,51 @@ class _PrecificarState extends State<TelaPrecificar> {
                   ],
                 ),
                 SizedBox(height: 16.0),
-                
                 Padding(
                   padding: EdgeInsets.only(top: 20),
                   child: ElevatedButton(
                     onPressed: () {
-                      Receita receita = Receita();
-                      //Cria as variaveis pegando o valor digitado pelo usuario
-                      String nome = nomeReceitaController.text;
-                      double rendimento = double.parse(rendimentoController.text);
-                      double lucro = double.parse(lucroController.text);
-                      receita.lucro = lucro;
-                      receita.rendimento = rendimento;
-                      receita.nome = nome;
+                      if (nomeReceitaController.text.isEmpty ||
+                          lucroController.text.isEmpty ||
+                          rendimentoController.text.isEmpty) {
+                        showDialog(
+                          context: context,
+                          builder: (BuildContext context) {
+                            return AlertDialog(
+                              title: Text('Erro'),
+                              content: Text(
+                                  'Preencha todos os campos corretamente.'),
+                              actions: <Widget>[
+                                TextButton(
+                                  onPressed: () {
+                                    Navigator.of(context).pop();
+                                  },
+                                  child: Text('OK'),
+                                ),
+                              ],
+                            );
+                          },
+                        );
+                      } else {
+                        Receita receita = Receita();
 
-                      Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => TelaIngredientes(
-                      receita: receita,
-                    ),
-                  ),
-                );
+                        String nome = nomeReceitaController.text;
+                        double rendimento =
+                            double.parse(rendimentoController.text);
+                        double lucro = double.parse(lucroController.text);
+                        receita.lucro = lucro;
+                        receita.rendimento = rendimento;
+                        receita.nome = nome;
 
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => TelaIngredientes(
+                              receita: receita,
+                            ),
+                          ),
+                        );
+                      }
                     },
                     style: ElevatedButton.styleFrom(
                         backgroundColor: Color.fromARGB(255, 92, 204, 72),

@@ -4,7 +4,7 @@ import '../classesObjeto/PedidoClasse.dart';
 
 class PedidoDAO {
   final CollectionReference pedidoCollection =
-      FirebaseFirestore.instance.collection('Pedido');
+      FirebaseFirestore.instance.collection('Pedido_Test');
 
   Future<DocumentReference<Object?>?> cadastrarPedido(Pedido pedido) async {
     try {
@@ -55,7 +55,7 @@ Future<void> nomeMetodoPagamento(String idPedido, Pedido pedido,) async {
 
   Future<void> deletarPedido(String idPedido) async {
     QuerySnapshot querySnapshot = await FirebaseFirestore.instance
-        .collection('Pedido')
+        .collection('Pedido_Test')
         .where('idPedido', isEqualTo: idPedido)
         .get();
 
@@ -65,20 +65,20 @@ Future<void> nomeMetodoPagamento(String idPedido, Pedido pedido,) async {
     print('deletou $idPedido');
 
     QuerySnapshot querySnapshotItens = await FirebaseFirestore.instance
-      .collection('Item_pedido')
+      .collection('ItemPedido_Test')
       .where('idPedido', isEqualTo: idPedido)
       .get();
 
     for (DocumentSnapshot doc in querySnapshotItens.docs) {
       await doc.reference.delete();
     }
-    print('Deletou todos os Item_pedido com idPedido: $idPedido');
+    print('Deletou todos os itens com idPedido: $idPedido');
   }
 
   static Future<double> calcularValorTotal() async {
     double total = 0;
     
-    QuerySnapshot pedidosSnapshot = await FirebaseFirestore.instance.collection('Pedido').get();
+    QuerySnapshot pedidosSnapshot = await FirebaseFirestore.instance.collection('Pedido_Test').get();
 
     for (QueryDocumentSnapshot pedidoDoc in pedidosSnapshot.docs) {
       double valorPedido = pedidoDoc['valorTotal'];
@@ -89,7 +89,7 @@ Future<void> nomeMetodoPagamento(String idPedido, Pedido pedido,) async {
 
   Future<int> contarVendas() async {
   try {
-    CollectionReference pedidosCollection = FirebaseFirestore.instance.collection('Pedido');
+    CollectionReference pedidosCollection = FirebaseFirestore.instance.collection('Pedido_Test');
     QuerySnapshot snapshot = await pedidosCollection.get();
     return snapshot.size;
   } catch (error) {
@@ -100,7 +100,7 @@ Future<void> nomeMetodoPagamento(String idPedido, Pedido pedido,) async {
 
 Future<int> calcularQuantidadeTotalItensVendidos() async {
   try {
-    CollectionReference vendasCollection = FirebaseFirestore.instance.collection('Item_pedido');
+    CollectionReference vendasCollection = FirebaseFirestore.instance.collection('ItemPedido_Test');
     QuerySnapshot snapshot = await vendasCollection.get();
 
     int quantidadeTotal = 0;
@@ -129,7 +129,7 @@ Future<int> calcularQuantidadeTotalItensVendidos() async {
 Future<String> produtoMaisVendido() async {
   try {
     QuerySnapshot querySnapshot = await FirebaseFirestore.instance
-        .collection('Item_pedido')
+        .collection('ItemPedido_Test')
         .get();
 
     Map<String, int> quantidadePorProduto = {};
@@ -163,7 +163,7 @@ Future<String> produtoMaisVendido() async {
   List<Pedido> pedidos = [];
 
   try {
-    QuerySnapshot snapshot = await FirebaseFirestore.instance.collection('Pedido').get();
+    QuerySnapshot snapshot = await FirebaseFirestore.instance.collection('Pedido_Test').get();
 
     List<QueryDocumentSnapshot<Map<String, dynamic>>> documentos = snapshot.docs.map((doc) => doc as QueryDocumentSnapshot<Map<String, dynamic>>).toList();
      int index = 1;

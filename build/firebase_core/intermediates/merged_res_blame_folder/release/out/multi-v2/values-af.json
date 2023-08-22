@@ -4,7 +4,7 @@
             "outputFile": "io.flutter.plugins.firebase.core.firebase_core-mergeReleaseResources-10:/values-af/values-af.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Shadow\\.gradle\\caches\\transforms-3\\4ef8e7d9a60cff636871604cf50e4184\\transformed\\jetified-play-services-basement-18.1.0\\res\\values-af\\values.xml",
+                    "source": "C:\\Users\\vitor\\.gradle\\caches\\transforms-3\\4ef8e7d9a60cff636871604cf50e4184\\transformed\\jetified-play-services-basement-18.1.0\\res\\values-af\\values.xml",
                     "from": {
                         "startLines": "4",
                         "startColumns": "0",
@@ -21,7 +21,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Shadow\\.gradle\\caches\\transforms-3\\6d3237bc319e7b967918f32c402a8d45\\transformed\\core-1.6.0\\res\\values-af\\values-af.xml",
+                    "source": "C:\\Users\\vitor\\.gradle\\caches\\transforms-3\\6d3237bc319e7b967918f32c402a8d45\\transformed\\core-1.6.0\\res\\values-af\\values-af.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -43,7 +43,7 @@
             "outputFile": "io.flutter.plugins.firebase.core.firebase_core-merged_res-12:/values-af/values-af.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Shadow\\.gradle\\caches\\transforms-3\\4ef8e7d9a60cff636871604cf50e4184\\transformed\\jetified-play-services-basement-18.1.0\\res\\values-af\\values.xml",
+                    "source": "C:\\Users\\vitor\\.gradle\\caches\\transforms-3\\4ef8e7d9a60cff636871604cf50e4184\\transformed\\jetified-play-services-basement-18.1.0\\res\\values-af\\values.xml",
                     "from": {
                         "startLines": "4",
                         "startColumns": "0",
@@ -60,7 +60,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Shadow\\.gradle\\caches\\transforms-3\\6d3237bc319e7b967918f32c402a8d45\\transformed\\core-1.6.0\\res\\values-af\\values-af.xml",
+                    "source": "C:\\Users\\vitor\\.gradle\\caches\\transforms-3\\6d3237bc319e7b967918f32c402a8d45\\transformed\\core-1.6.0\\res\\values-af\\values-af.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

@@ -1,22 +1,14 @@
 import 'package:CakeBoss/cakebossapp/generatedtelainicialwidget/generated/CabecalhoWidget.dart';
 import 'package:CakeBoss/telasApp/TelaAddProdutoVenda.dart';
 import 'package:CakeBoss/telasApp/TelaCadastrarProduto.dart';
+import 'package:CakeBoss/telasApp/TelaCreditos.dart';
 import 'package:CakeBoss/telasApp/TelaEstoqueProduto.dart';
 import 'package:flutter/material.dart';
-<<<<<<< HEAD
 import 'TelaEstatistica.dart';
 import 'TelaGerenciarEstoque.dart';
 import 'TelaGerenciarVendas.dart';
-=======
-import 'package:flutterapp/cakebossapp/generatedtelainicialwidget/generated/CabecalhoWidget.dart';
-import 'package:flutterapp/telasApp/TelaAddProdutoVenda.dart';
-import 'package:flutterapp/telasApp/TelaCadastrarProduto.dart';
-import 'package:flutterapp/telasApp/TelaEstoqueProduto.dart';
-import 'package:flutterapp/telasApp/TelaPrecificar.dart';
-import 'package:flutterapp/telasApp/TelaEstatistica.dart';
-import 'package:flutterapp/telasApp/TelaGerenciarEstoque.dart';
-import 'package:flutterapp/telasApp/TelaGerenciarVendas.dart';
->>>>>>> 2a915d008379c2920107c37396bc9bcbbfa2e02f
+import 'TelaPrecificar.dart';
+
 
 
 class TelaInicialWidget extends StatelessWidget {
@@ -345,7 +337,10 @@ class TelaInicialWidget extends StatelessWidget {
                         height: 140,
                         child: ElevatedButton(
                           onPressed: () {
-                            // chama a tela de personalizar
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => TelaCreditosWidget()),
+                              );
                           },
                           
                             style: ElevatedButton.styleFrom(
@@ -360,7 +355,7 @@ class TelaInicialWidget extends StatelessWidget {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Text(
-                              'Personalizar',
+                              'Créditos',
                               style: 
                               TextStyle(fontSize: 15,
                               fontWeight: FontWeight.w900,
@@ -369,7 +364,7 @@ class TelaInicialWidget extends StatelessWidget {
                               ),   
                               ),
                               SizedBox(height: 5),
-                              Icon(Icons.person_sharp,
+                              Icon(Icons.groups_2,
                                   size: 40,
                                   color: Colors.black,
                               ),  

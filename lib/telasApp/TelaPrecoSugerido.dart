@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutterapp/classesObjeto/IngredienteClasse.dart';
-import 'package:flutterapp/classesObjeto/ReceitaClassse.dart';
 import '../cakebossapp/generatedtelainicialwidget/generated/CabecalhoWidget.dart';
-import 'TelaPrecificar.dart';
+import '../classesObjeto/IngredienteClasse.dart';
+import '../classesObjeto/ReceitaClassse.dart';
 
 
 

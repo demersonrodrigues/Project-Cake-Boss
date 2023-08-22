@@ -207,7 +207,7 @@ class _CadastrarProdutoState extends State<TelaCadastrarProduto> {
                             double.parse(pesoProdutoController.text);
                         String descricaoProduto =
                             descricaoProdutoController.text;
-                        String categoria = categoriaProdutoController.text;
+                        String? categoria = categoriaSelecionada;
 
                         //Cria o objeto produto
                         Produto produto = Produto(

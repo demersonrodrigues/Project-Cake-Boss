@@ -1,13 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutterapp/cakebossapp/generatedtelainicialwidget/generated/CabecalhoWidget.dart';
-import 'package:flutterapp/classesDAO/ProdutoDAO.dart';
-import 'package:flutterapp/classesObjeto/ProdutoClasse.dart';
-import 'package:flutterapp/classesObjeto/ReceitaClassse.dart';
-import 'package:flutterapp/telasApp/TelaInicial.dart';
-import 'package:flutterapp/telasApp/TelaPrecificar.dart';
 
+import '../cakebossapp/generatedtelainicialwidget/generated/CabecalhoWidget.dart';
 import '../classesObjeto/IngredienteClasse.dart';
+import '../classesObjeto/ReceitaClassse.dart';
 import 'TelaPrecoSugerido.dart';
 
 class TelaIngredientes extends StatefulWidget {
@@ -15,7 +11,6 @@ class TelaIngredientes extends StatefulWidget {
   TelaIngredientes({required this.receita});
   @override
   IngredientesState createState() => IngredientesState();
-  
 }
 
 class IngredientesState extends State<TelaIngredientes> {
@@ -24,7 +19,7 @@ class IngredientesState extends State<TelaIngredientes> {
   TextEditingController custoIngredienteController = TextEditingController();
   TextEditingController volumeIngredienteController = TextEditingController();
   TextEditingController quantidadeUtilizadaController = TextEditingController();
-  List<Ingrediente> ingredientes = []; 
+  List<Ingrediente> ingredientes = [];
 
   @override
   void dispose() {
@@ -133,35 +128,52 @@ class IngredientesState extends State<TelaIngredientes> {
                   padding: EdgeInsets.only(top: 20),
                   child: ElevatedButton(
                     onPressed: () {
-                      //Cria as variaveis pegando o valor digitado pelo usuario
-                      String nomeIngrediente = nomeIngredienteController.text;
-                      double custoIngrediente =
-                          double.parse(custoIngredienteController.text);
+                      if (nomeIngredienteController.text.isEmpty ||
+                          custoIngredienteController.text.isEmpty ||
+                          volumeIngredienteController.text.isEmpty ||
+                          quantidadeUtilizadaController.text.isEmpty) {
+                        showDialog(
+                          context: context,
+                          builder: (BuildContext context) {
+                            return AlertDialog(
+                              title: Text('Erro'),
+                              content: Text(
+                                  'Preencha todos os campos corretamente.'),
+                              actions: <Widget>[
+                                TextButton(
+                                  onPressed: () {
+                                    Navigator.of(context).pop();
+                                  },
+                                  child: Text('OK'),
+                                ),
+                              ],
+                            );
+                          },
+                        );
+                      } else {
+                        String nomeIngrediente = nomeIngredienteController.text;
+                        double custoIngrediente =
+                            double.parse(custoIngredienteController.text);
 
-                      double volumeIngrediente =
-                          double.parse(volumeIngredienteController.text);
-                      double quantidadeUtilizada =
-                          double.parse(quantidadeUtilizadaController.text);
+                        double volumeIngrediente =
+                            double.parse(volumeIngredienteController.text);
+                        double quantidadeUtilizada =
+                            double.parse(quantidadeUtilizadaController.text);
 
-
-                      Ingrediente ingrediente = Ingrediente();
-                      ingrediente.valor = custoIngrediente;
-                      ingrediente.peso = volumeIngrediente;
-                      ingrediente.nome = nomeIngrediente;
-                      ingrediente.quantidade = quantidadeUtilizada;
-                      ingrediente.custo = ingrediente.valor! / ingrediente.peso! * ingrediente.quantidade!;
-                      ingredientes.add(ingrediente);
-                      for(Ingrediente ingrediente in ingredientes){
-                        print(ingrediente.nome);
-                        print(ingrediente.custo);
+                        Ingrediente ingrediente = Ingrediente();
+                        ingrediente.valor = custoIngrediente;
+                        ingrediente.peso = volumeIngrediente;
+                        ingrediente.nome = nomeIngrediente;
+                        ingrediente.quantidade = quantidadeUtilizada;
+                        ingrediente.custo = ingrediente.valor! /
+                            ingrediente.peso! *
+                            ingrediente.quantidade!;
+                        ingredientes.add(ingrediente);
+                        custoIngredienteController.clear();
+                        volumeIngredienteController.clear();
+                        nomeIngredienteController.clear();
+                        quantidadeUtilizadaController.clear();
                       }
-
-                
-                      // limpar as caixas de textos e salvar em uma lista
-                      custoIngredienteController.clear();
-                      volumeIngredienteController.clear();
-                      nomeIngredienteController.clear();
-                      quantidadeUtilizadaController.clear();
                     },
                     style: ElevatedButton.styleFrom(
                         backgroundColor: Colors.red,
@@ -177,18 +189,48 @@ class IngredientesState extends State<TelaIngredientes> {
                   padding: EdgeInsets.only(top: 20),
                   child: ElevatedButton(
                     onPressed: () {
-                      int index = 0;
-                      double custototal = 0;
-                      for(Ingrediente ingrediente in ingredientes){
+                      if (ingredientes.isEmpty) {
+                        showDialog(
+                          context: context,
+                          builder: (BuildContext context) {
+                            return AlertDialog(
+                              title: Text('Erro'),
+                              content: Text(
+                                  'Adicione pelo menos um igrediente.'),
+                              actions: <Widget>[
+                                TextButton(
+                                  onPressed: () {
+                                    Navigator.of(context).pop();
+                                  },
+                                  child: Text('OK'),
+                                ),
+                              ],
+                            );
+                          },
+                        );
+                      } else {
+                        int index = 0;
+                        double custototal = 0;
+                        for (Ingrediente ingrediente in ingredientes) {
                           custototal += ingredientes[index].custo!;
                           index++;
+                        }
+                        double precosugerido =
+                            custototal / widget.receita.rendimento! +
+                                custototal *
+                                    widget.receita.lucro! /
+                                    100 /
+                                    widget.receita.rendimento!;
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => TelaPrecoSugerido(
+                                  ingredientes: ingredientes,
+                                  receita: widget.receita,
+                                  custototal: custototal,
+                                  precosugerido: precosugerido)),
+                        );
                       }
-                      double precosugerido = custototal/widget.receita.rendimento! + custototal * widget.receita.lucro! /100 / widget.receita.rendimento!;
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => TelaPrecoSugerido(ingredientes: ingredientes, receita: widget.receita, custototal: custototal, precosugerido: precosugerido)),
-                      );
                     },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.red,
@@ -208,4 +250,3 @@ class IngredientesState extends State<TelaIngredientes> {
     );
   }
 }
-

@@ -4,7 +4,7 @@ import '../classesObjeto/ItemPedidoClasse.dart';
 
 class ItemPedidoDAO {
   final CollectionReference itensPedidoCollection =
-      FirebaseFirestore.instance.collection('Item_pedido');
+      FirebaseFirestore.instance.collection('ItemPedido_Test');
 
   Future<void> cadastrarItens(ItemPedido itensPedido) async {
     try {
@@ -24,7 +24,7 @@ class ItemPedidoDAO {
 
     try {
       QuerySnapshot querySnapshot = await FirebaseFirestore.instance
-          .collection('Item_pedido')
+          .collection('ItemPedido_Test')
           .where('idPedido', isEqualTo: idPedido)
           .get();
 

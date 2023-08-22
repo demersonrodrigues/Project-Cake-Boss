@@ -1,12 +1,12 @@
 <lint-module
     format="1"
-    dir="C:\Users\Shadow\Documents\GitHub\Project-Cake-Boss\android\app"
+    dir="C:\Users\vitor\OneDrive\Documentos\GitHub\Project-Cake-Boss\android\app"
     name=":app"
     type="APP"
     maven="android:app:"
     gradle="7.3.0"
-    buildFolder="C:\Users\Shadow\Documents\GitHub\Project-Cake-Boss\build\app"
-    bootClassPath="C:\Users\Shadow\AppData\Local\Android\sdk\platforms\android-33\android.jar;C:\Users\Shadow\AppData\Local\Android\sdk\build-tools\30.0.3\core-lambda-stubs.jar"
+    buildFolder="C:\Users\vitor\OneDrive\Documentos\GitHub\Project-Cake-Boss\build\app"
+    bootClassPath="C:\Users\vitor\AppData\Local\Android\sdk\platforms\android-33\android.jar;C:\Users\vitor\AppData\Local\Android\sdk\build-tools\30.0.3\core-lambda-stubs.jar"
     javaSourceLevel="1.8"
     compileTarget="android-33">
   <lintOptions

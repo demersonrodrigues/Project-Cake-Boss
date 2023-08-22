@@ -4,7 +4,7 @@
             "outputFile": "com.crazecoder.openfile.open_file-mergeReleaseResources-22:/values-v23/values-v23.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Shadow\\.gradle\\caches\\transforms-3\\1bb2ea3da1352728260f3b4db781d521\\transformed\\appcompat-1.6.1\\res\\values-v23\\values-v23.xml",
+                    "source": "C:\\Users\\vitor\\.gradle\\caches\\transforms-3\\1bb2ea3da1352728260f3b4db781d521\\transformed\\appcompat-1.6.1\\res\\values-v23\\values-v23.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,20,34,35,36,39,43,44,45,46",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -20,7 +20,7 @@
             "outputFile": "com.crazecoder.openfile.open_file-merged_res-24:/values-v23/values-v23.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Shadow\\.gradle\\caches\\transforms-3\\1bb2ea3da1352728260f3b4db781d521\\transformed\\appcompat-1.6.1\\res\\values-v23\\values-v23.xml",
+                    "source": "C:\\Users\\vitor\\.gradle\\caches\\transforms-3\\1bb2ea3da1352728260f3b4db781d521\\transformed\\appcompat-1.6.1\\res\\values-v23\\values-v23.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,20,34,35,36,39,43,44,45,46",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4",

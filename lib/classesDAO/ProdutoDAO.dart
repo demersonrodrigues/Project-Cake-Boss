@@ -6,7 +6,7 @@ import '../classesObjeto/ProdutoClasse.dart';
 
 class ProdutoDAO {
   final CollectionReference produtosCollection =
-      FirebaseFirestore.instance.collection('Produto');
+      FirebaseFirestore.instance.collection('Produto_Test');
 
   Future<void> cadastrarProduto(Produto produto) async {
     try {
@@ -29,7 +29,7 @@ class ProdutoDAO {
 
     try {
       QuerySnapshot snapshot =
-          await FirebaseFirestore.instance.collection('Produto').get();
+          await FirebaseFirestore.instance.collection('Produto_Test').get();
 
       List<QueryDocumentSnapshot<Map<String, dynamic>>> documentos = snapshot
           .docs
@@ -73,7 +73,7 @@ class ProdutoDAO {
 
   Future<void> deletarProduto(String nomeProduto) async {
     QuerySnapshot querySnapshot = await FirebaseFirestore.instance
-        .collection('Produto')
+        .collection('Produto_Test')
         .where('nome', isEqualTo: nomeProduto)
         .get();
 
@@ -86,7 +86,7 @@ class ProdutoDAO {
       String nomeProduto, int quantidadeAdicionar) async {
     try {
       QuerySnapshot querySnapshot = await FirebaseFirestore.instance
-          .collection('Produto')
+          .collection('Produto_Test')
           .where('nome', isEqualTo: nomeProduto)
           .get();
 
@@ -108,7 +108,7 @@ class ProdutoDAO {
       String nomeProduto, int quantidadeRemover, BuildContext context) async {
     try {
       QuerySnapshot querySnapshot = await FirebaseFirestore.instance
-          .collection('Produto')
+          .collection('Produto_Test')
           .where('nome', isEqualTo: nomeProduto)
           .get();
 
