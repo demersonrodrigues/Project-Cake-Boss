@@ -18,9 +18,9 @@ class CabecalhoWidget extends StatelessWidget implements PreferredSizeWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            const SizedBox(height: 8),
-            CakeBossWidget(),
-            const SizedBox(height: 8),
+            //const SizedBox(height: 8),
+            //CakeBossWidget(),
+            //const SizedBox(height: 8),
             LogoWidget(),
             const SizedBox(height: 8),
             TituloPaginaWidget(texto: textoTitulo),
